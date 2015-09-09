@@ -1,0 +1,29 @@
+<h2 id="task-description">Task Description</h2>
+<p>Write a program to simulate a pachinko. For this problem we will use a very simple pachinko.</p>
+<p>There are N rows of pins in this pachinko. The i-th pin of a row is located between the i-th and (i-
+1)-th pin in the previous row, as shown in the figure below. When a ball drops on a pin, it will go
+either left or right. This probability varies from pin to pin. After hitting N pins, the ball will
+fall into one of the N + 1 buckets. Now given all the probability distribution of pins, please
+compute the probability of the ball falling into each of the N + 1 buckets.
+The number of rows of pins N, is less than or equal to 15.</p>
+<p>5.jpg</p>
+<h2 id="input">Input</h2>
+<p>The first line of the input has the number of rows N. The next N(N+1)/2 line has two
+integers a, b, that indicate the ratio of the probability that the ball will go left or right.
+The probability ratio is given from top to the bottom, from left to the right.</p>
+<p>a, b &gt;= 0, and it is garanteed that one of a, b &gt; 0.</p>
+<h2 id="output">Output</h2>
+<p>Please output N + 1 lines -- each has a fractional number. The i-line has the probability of the ball
+falling into the i-th bucket. Each line has a ratio q/p to indicate the probability.
+Note that you need to simplify the q/p ratio � you should output 1/2 instead of 2/4.</p>
+<h2 id="sample-input">Sample input</h2>
+<pre><code>2
+1 2
+2 3
+3 1
+</code></pre><h2 id="sample-output">Sample output</h2>
+<pre><code>2/15
+7/10
+1/6
+</code></pre><h2 id="hint">Hint</h2>
+<p>In order to prevent arithmetic overflow, you should reduce the denominator and numerator of each fractional number you use.</p>

@@ -1,0 +1,21 @@
+<h2 id="task-description">Task Description</h2>
+<p>Prepare a two dimensional zig-zag array using a free buffer and a pointer array. Note that the numbers of columns in rows of a zig-zag array may be different. The ingredients of a zig-zag array are as follow.</p>
+<ul>
+<li>An integer row that indicates the number of rows of this two dimensional array.</li>
+<li>An integer array column[] that specifies the number of columns in that row.</li>
+<li>An integer buffer, int buffer[10000]; which will be sufficient to hold all elements.</li>
+<li>An array of integer pointers. int *array[]; This array has the number of row elements.</li>
+</ul>
+<p>Now you need to implement the following function, so that after calling prepare_array, we can use array[i][j] to access the elements in this prepared two dimensional zig-zag array.</p>
+<p>void prepare_array(int buffer[], int *array[], int row, int column[]);</p>
+<p>We will test your function using a code segment like the following.</p>
+<pre><code>int row = <span class="number">4</span>;
+int column[<span class="number">4</span>] = {<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">10</span>};
+int *<span class="keyword">array</span>[<span class="number">50</span>];
+int buffer[<span class="number">10000</span>]
+prepare_array(buffer, <span class="keyword">array</span>, row, column);
+<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)
+ <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; column[i]; j++)
+   <span class="keyword">array</span>[i][j] = i * <span class="number">100</span> + j;
+</code></pre><h2 id="hint">Hint</h2>
+<p>If we properly set array[i] to point to a cell in buffer, array[i][j] will be the j-th cell from this location.</p>

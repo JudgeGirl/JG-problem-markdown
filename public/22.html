@@ -1,0 +1,35 @@
+<h2 id="task-description">Task Description</h2>
+<p>Write a function posneg to find the number of positive and negative integers in a 5 by 5 integer array. The prototype of posneg is as follows.</p>
+<pre><code>void posneg(int <span class="keyword">array</span>[<span class="number">5</span>][<span class="number">5</span>], int result[<span class="number">2</span>]);
+</code></pre><p>The number of negative integers should be place in result[0], and the number of positive integers should be place in result[1]. You only need to write the function and we will use a main program to test the correctness of your function.</p>
+<p>The main program is as follows.</p>
+<pre><code><span class="comment">#include &lt;sdtio.h></span>
+
+int main()
+{
+  int i, j;
+  int <span class="keyword">array</span>[<span class="number">5</span>][<span class="number">5</span>];
+  int result[<span class="number">2</span>];
+  <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)
+    <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; <span class="number">5</span>; j++)
+      scanf(<span class="string">"%d"</span>, &amp;(<span class="keyword">array</span>[i][j]);
+
+  posneg(<span class="keyword">array</span>, result);
+  printf(<span class="string">"%d\n"</span>, result[<span class="number">0</span>]);
+  printf(<span class="string">"%d\n"</span>, result[<span class="number">1</span>]);
+  <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre><h2 id="input-format">Input Format</h2>
+<p>There are five lines in the input. Each line has five integers.</p>
+<h2 id="output-format">Output Format</h2>
+<p>There are two lines in the output. The first line has the number of negative integers, and the second line has the number of positive integers in the matrix.</p>
+<h2 id="sample-input">Sample Input</h2>
+<pre><code>0 2 3 4 5
+7 -7 7 7 7
+8 9 -10 11 2
+45 8 9 45 3
+0 0 0 0 0
+</code></pre><h2 id="sample-output">Sample Output</h2>
+<p><code>`
+2
+17</code></p>

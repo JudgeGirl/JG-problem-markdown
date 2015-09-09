@@ -1,0 +1,51 @@
+<h2 id="task-description">Task Description</h2>
+<p>編寫一個排版程式。程式必須將輸入的字逐一讀入，再逐一輸出。一個字的定義是「連續非空白的字元」，例如7、empire. 都算是字。也就是說我們可以用scanf(&quot;%s&quot;, string)讀入一個字。</p>
+<h2 id="input">Input</h2>
+<p>輸入的第一行是每行可輸出的字元數m，之後就是要排版的文章，每個英文字的最大長度為256個字元，輸入請讀取到EOF結束。</p>
+<h2 id="output">Output</h2>
+<p>輸出請將所有的字依序印出，兩個字之間要以至少一個空格隔開。我們的目標是要利用最少且盡量平均分配的空格使得每一行輸出恰好m個字元(包含空白，不包含換行)。也就是我們要盡量把字放在同一行，而當我們必須要開新的一行時，若原本的那行字串+空白的長度不足m，我們要在字之間補上更多的空白。如果空格無法平均分配，則多的空格必須加在前面的字後面。行尾請勿有多的空白，也請勿少空白。最後一行輸出後必須換行。</p>
+<h2 id="limits">Limits</h2>
+<p>32 &lt;= m &lt;= 256 ，每個字串的字元數保證不會超過m個 。</p>
+<h2 id="sample-input">Sample input</h2>
+<pre><code><span class="number">40</span>
+The Declaration of Independence 
+was a statement adopted by the 
+Continental Congress on July <span class="number">4</span>, 
+<span class="number">1776</span>, which announced that the 
+thirteen 
+American colonies then at war with 
+Great Britain regarded themselves <span class="keyword">as</span> 
+independent
+states, <span class="keyword">and</span> no longer a part of the British 
+Empire. 
+Written primarily by Thomas Jefferson, 
+the Declaration was a formal explanation of why Congress had 
+voted on July <span class="number">2</span> to <span class="keyword">declare</span> 
+independence from Great Britain, more than 
+a year 
+after the outbreak of the American Revolutionary War. 
+The birthday of the United States 
+of America-Independence Day-is celebrated on 
+July <span class="number">4</span>, the day 
+the wording of the Declaration was approved 
+by Congress.
+</code></pre><h2 id="sample-output">Sample output</h2>
+<pre><code>The  Declaration  of  Independence was a
+statement  adopted  by  the  Continental
+Congress   on   July   <span class="number">4</span>,   <span class="number">1776</span>,  which
+announced  that  the  thirteen  American
+colonies  then at war with Great Britain
+regarded   themselves   <span class="keyword">as</span>   independent
+states,  <span class="keyword">and</span>  no  longer  a  part of the
+British  Empire.  Written  primarily  by
+Thomas  Jefferson, the Declaration was a
+formal  explanation  of why Congress had
+voted  on July <span class="number">2</span> to <span class="keyword">declare</span> independence
+from  Great  Britain,  more  than a year
+after   the  outbreak  of  the  American
+Revolutionary  War.  The birthday of the
+United  States  of  America-Independence
+Day-is celebrated on July <span class="number">4</span>, the day the
+wording  of the Declaration was approved
+by                             Congress.
+</code></pre>

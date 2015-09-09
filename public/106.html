@@ -1,0 +1,23 @@
+<h2 id="task-description">Task Description</h2>
+<p>Write a program to determine if a number is divisible by 2, 3, 5, and 11. The rules are as follow.</p>
+<ul>
+<li>A number is divisible by 2 if the last digit is divisible by 2</li>
+<li>A number is divisible by 3 if the sum of the digits is divisible by 3</li>
+<li>A number is divisible by 5 if the last digit is 0 or 5.</li>
+<li>A number is divisible by 11 if the difference between the sum of the even positioned digits and the the sum of the odd positioned digits is divisible by 11.</li>
+</ul>
+<p>For example the number 190949 is not divisible by 2 because 9 is not divisible by 2. It is not divisible by 3 because 1 + 9 + 0 + 9 + 4 + 9 = 32 is not divisible by 3. It is not divisible by 5 because the last digit is 9. It is divisible by 11 because the sum of even positioned digits is 9 + 9 + 9 = 27, and the the sum of odd positioned digits is 1 + 0 + 4 = 5. The difference between 27 and 5 is 22, which is divisible by 11.</p>
+<h2 id="limits">Limits</h2>
+<p>The number of digits in a number is no more than 1000. Note that the number of digits could be very large so you cannot store the number in an int.</p>
+<h2 id="input">Input</h2>
+<p>The input has several lines. Each line has a positive integer. A &#39;-1&#39; indicates the end of input.</p>
+<h2 id="output">Output</h2>
+<p>For each input number your program should output four &quot;yes&quot; or &quot;no&quot;, which are separated by a space character. These yes and no indicate whether the input number is divisible by 2, 3, 5, and 11.</p>
+<h2 id="sample-input">Sample input</h2>
+<pre><code>190949
+20
+-1
+</code></pre><h2 id="sample-output">Sample output</h2>
+<pre><code>no no no yes
+yes no yes no
+</code></pre>

@@ -1,8 +1,5 @@
 var marked = require('marked');
 
-var markdownString = '```\nfor(var i=0;i<10;i++)alert(i);\n```';
-
-
 // Synchronous highlighting with highlight.js
 marked.setOptions({
   highlight: function (code) {
@@ -10,7 +7,8 @@ marked.setOptions({
   }
 });
 
-console.log(marked(markdownString));
+// var markdownString = '```\nfor(var i=0;i<10;i++)alert(i);\n```';
+// console.log(marked(markdownString));
 
 var fs = require("fs");
 var path = require("path");

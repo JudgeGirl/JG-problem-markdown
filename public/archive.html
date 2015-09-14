@@ -1,10 +1,10 @@
 <h2 id="-">歡迎光臨, 計算機程式設計課之批改娘系統</h2>
 <ul>
-<li><p>2015/09/12 Sat. 機房停電，系統停止服務一日</p>
+<li>CSIE 1210 雙班 加簽授權碼 於 2015/09/15 Tue. 起至 <strong> 資 332 實驗室 </strong> 找 TA 拿取 (限有在課堂上 <strong> 到場登記 </strong> 加簽的同學)。</li>
+<li>請各位同學拿取到發送到信箱密碼後自行修改密碼<ul>
+<li>登入 -&gt; BXXXXXX (點選自己的帳號) -&gt; EDIT PROFILE 完成修改。</li>
+</ul>
 </li>
-<li><p>增加第 283 題取代第 215 題。</p>
-</li>
-<li>第 7 題測資已修正，全部上傳記錄已經 rejudge ！</li>
 </ul>
 <h2 id="-">聯絡資訊</h2>
 <ul>
@@ -24,7 +24,39 @@ int main() {
 </code></pre><pre><code>$ gcc first_problem.c -o first.out
 $ ./first.out
 &gt;&gt; hello, world
-</code></pre><h2 id="example-code">Example Code</h2>
+</code></pre><h2 id="fast-start-macbook-ubuntu">Fast Start - Macbook/Ubuntu</h2>
+<ul>
+<li><p>打開 Termainl (終端機)，下達 <code>pwd</code> 指令可以得到當前所在目錄位置</p>
+<pre><code>morris:~ morris$ pwd
+&gt;&gt; /Users/morris
+</code></pre></li>
+<li><p>假設 <code>hello.c</code> 檔案放至桌面目錄下，執行 <code>cd ~/Desktop</code>，其中 <code>~</code> 表示從家目錄下。</p>
+<pre><code>morris:~ morris$ cd ~/Desktop
+morris:Desktop morris$
+</code></pre></li>
+<li><p>可以利用 Editor 或者是 command line mode 下的 vim 編譯器創建文字欓。</p>
+<pre><code>morris:Desktop morris$ vim hello.c
+</code></pre><p>進入 vim 不要慌，仔細看左下角的訊息，按下鍵盤上的 <code>i</code> 可以進入 <code>-- INSERT --</code> 模式，這時候可以打上你的程式碼，按下鍵盤上的 <code>ESC</code> 離開 INSERT MODE。最後按下 <code>:wq</code> (寫入並離開) 或者是 <code>:q</code> (離開) 又或者是 <code>:q!</code> (離開但不儲存) 才能關閉 vim 編譯器。</p>
+</li>
+<li><p>編譯 <code>hello.c</code> 檔案，預設會產出 <code>./a.out</code> 的執行檔。</p>
+<pre><code>morris:Desktop morris$ gcc hello.c -std=c99
+</code></pre></li>
+<li><p>測試運行</p>
+<pre><code>morris:Desktop morris$ ./a.out
+</code></pre></li>
+</ul>
+<h2 id="fast-start-common">Fast Start - Common</h2>
+<ul>
+<li>進入無限迴圈，強制關閉運行<ul>
+<li>若按下 <code>Ctrl + Z + ENTER</code> 相當於 stdin 串流的 EOF</li>
+<li>若按下 <code>Ctrl + C</code> 相當於中斷程式</li>
+<li>若按下 <code>Ctrl + D</code> 相當於前兩個合併一起處理</li>
+</ul>
+</li>
+<li>鍵入檔案名稱打入很慢，請善用利用 <code>Tab</code> 鍵提供自動補完</li>
+<li>指令很長，要回到行首或行尾修改參數，請善用 <code>HOME</code> 和 <code>END</code> 鍵。Macbook 使用者若在 Terminal 請使用 <code>control + a</code> 和 <code>control + e</code>，若在 Editor 上則使用 <code>command + ←</code> 和 <code>command + →</code></li>
+</ul>
+<h2 id="example-code">Example Code</h2>
 <pre><code><span class="comment">#include &lt;stdio.h></span>
 
 int main() {

@@ -1,0 +1,39 @@
+<h2 id="task-description">Task Description</h2>
+<p><img src="http://i.imgur.com/u8BiCNn.png" alt=""></p>
+<p>從一段英數夾雜的字串中，擷取整數輸出。</p>
+<h2 id="input-format">Input Format</h2>
+<p>有多組測資，每組測資一行，字串長度不超過 1000，出現的整數 $x$ 滿足 $-2^{31} \le x \le 2^{31} - 1$</p>
+<h2 id="output-format">Output Format</h2>
+<p>將每一個整數輸出一行。</p>
+<h2 id="sample-input">Sample Input</h2>
+<pre><code>P0C002NTUCSIE2015Week2EXAMPROBLEM1
+</code></pre><h2 id="sample-output">Sample Output</h2>
+<pre><code>0
+2
+2015
+2
+1
+</code></pre><h2 id="hint">Hint</h2>
+<pre><code><span class="comment">#include &lt;stdio.h> </span>
+<span class="comment">#include &lt;string.h>    // strlen(s)</span>
+
+int main() {
+    char s[<span class="number">1024</span>];
+    <span class="keyword">while</span> (scanf(<span class="string">"%s"</span>, s) == <span class="number">1</span>) {
+        int n = (int) strlen(s);    <span class="comment">// strlen("CSIE") = 4, actually use "CSIE\0" in memory.</span>
+        <span class="keyword">for</span> (int i = <span class="number">0</span>; i &lt; n; i++) {
+            char c = s[i];    
+            <span class="comment">/*
+                input "CSIE", 
+                s[0] = 'C', s[1] = 'S', ...
+            */</span>
+            <span class="comment">/* add you code here */</span>
+        }
+        <span class="comment">/* add you code here */</span>
+    }
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre><p><strong> 多組測資 </strong> 意即一個測資檔案會有多個測資。</p>
+<pre><code>P0C002NTUCSIE2015Week2EXAMPROBLEM1
+2015Y09M20D02PM
+</code></pre>

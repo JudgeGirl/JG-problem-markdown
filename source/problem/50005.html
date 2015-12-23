@@ -1,0 +1,64 @@
+<h2 class="content-subhead">Problem Description</h2><p>Write a program to recognize a $k$ by $k$ pattern in an $n$ by $n$ matrix. Both the matrix and the pattern consist of integers. A submatrix of the matrix matches the pattern if the following are true.</p>
+<ul>
+<li>There are no more than $m$ mismatch among the numbers. </li>
+<li>The sums of the numbers in the two matrices differ no more than $d$.</li>
+</ul>
+<p>For example the following pattern is a match of the following submatrix if $m$ is $2$, and $d$ is $2$. However, they do not match when either $m$ is $1$, or $d$ is $1$.</p>
+<table class="pure-table pure-table-bordered"><thead><tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody><tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+</tr>
+</tbody></table><table class="pure-table pure-table-bordered"><thead><tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody><tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>7</td>
+<td>6</td>
+</tr>
+<tr>
+<td>7</td>
+<td>8</td>
+<td>5</td>
+</tr>
+</tbody></table><p>Now given the matrix, the pattern, $k$, and $d$, please report the position of upper-left corner of the last match. Here we assume that the first row is at the top and the first column is on the left. The last match is the match that has largest row index with its upper left corner element. If there are more than one match in that row, report the one with the largest column index. All indices start from 0.</p>
+<p>In some subtasks there could be no match. In that case report <code>-1 -1</code>.</p>
+<h2 class="content-subhead">Subtasks</h2><ul>
+<li>20pt. $n$ is between $1$ and $10$, $k$ is $1$, $m$ is $0$, $d$ is $0$, and there is always a match. That is, <strong>you only need to check where the last pattern is</strong>.</li>
+<li>20pt. $n$ is between $1$ and $10$, $k$ is between $1$ and $n$, $m$ is between $1$ and $k \times k$, <strong>$d$ is extremely large so you do not to care about it</strong>, and there is always a match.</li>
+<li>30pt. $n$ is between $1$ and $10$, $k$ is between $1$ and $n$, $m$ is between $1$ and $k \times k$, $d$ is positive, and there is always a match.</li>
+<li>30pt. $n$ is between $1$ and $10$, $k$ is between $1$ and $n$, $m$ is between $1$ and $k \times k$, $d$ is positive, and <strong>there could be no match</strong>.</li>
+</ul>
+<h2 class="content-subhead">Input Format</h2><p>The first line contains four integers $n$, $k$, $m$, $d$. The next $n$ lines has the matrix and $n$ elements in each line. The next $k$ lines has the pattern and $k$ elements in each line.</p>
+<h2 class="content-subhead">Sample Input 0</h2><pre><code><div id="highlighter_519838" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">3 3 1 1</code></div><div class="line number2 index1 alt1"><code class="plain">1 2 3</code></div><div class="line number3 index2 alt2"><code class="plain">4 5 6</code></div><div class="line number4 index3 alt1"><code class="plain">7 8 9</code></div><div class="line number5 index4 alt2"><code class="plain">1 2 3</code></div><div class="line number6 index5 alt1"><code class="plain">4 7 6</code></div><div class="line number7 index6 alt2"><code class="plain">7 8 5</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">Sample Output 0</h2><pre><code><div id="highlighter_780735" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">-1 -1</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">Sample Input 1</h2><pre><code><div id="highlighter_726574" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">3 3 2 2</code></div><div class="line number2 index1 alt1"><code class="plain">1 2 3</code></div><div class="line number3 index2 alt2"><code class="plain">4 5 6</code></div><div class="line number4 index3 alt1"><code class="plain">7 8 9</code></div><div class="line number5 index4 alt2"><code class="plain">1 2 3</code></div><div class="line number6 index5 alt1"><code class="plain">4 7 6</code></div><div class="line number7 index6 alt2"><code class="plain">7 8 5</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">Sample Output 1</h2><pre><code><div id="highlighter_136668" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">0 0</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">Sample Input 2</h2><pre><code><div id="highlighter_138498" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">5 2 0 0</code></div><div class="line number2 index1 alt1"><code class="plain">1 1 0 0 0</code></div><div class="line number3 index2 alt2"><code class="plain">1 1 1 0 0</code></div><div class="line number4 index3 alt1"><code class="plain">0 1 1 0 0</code></div><div class="line number5 index4 alt2"><code class="plain">0 0 1 1 0</code></div><div class="line number6 index5 alt1"><code class="plain">0 0 1 1 0</code></div><div class="line number7 index6 alt2"><code class="plain">1 1</code></div><div class="line number8 index7 alt1"><code class="plain">1 1</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">Sample Output 2</h2><pre><code><div id="highlighter_990126" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">3 2</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">Sample Input 3</h2><pre><code><div id="highlighter_762953" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">5 2 2 0</code></div><div class="line number2 index1 alt1"><code class="plain">1 1 0 0 0</code></div><div class="line number3 index2 alt2"><code class="plain">1 1 1 0 0</code></div><div class="line number4 index3 alt1"><code class="plain">0 1 1 0 0</code></div><div class="line number5 index4 alt2"><code class="plain">0 0 1 1 3</code></div><div class="line number6 index5 alt1"><code class="plain">0 0 1 1 -1</code></div><div class="line number7 index6 alt2"><code class="plain">1 1</code></div><div class="line number8 index7 alt1"><code class="plain">1 1</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">Sample Output 3</h2><pre><code><div id="highlighter_70739" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">3 3</code></div></div></td></tr></tbody></table></div>
+</code></pre>

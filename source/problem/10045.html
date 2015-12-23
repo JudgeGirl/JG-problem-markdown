@@ -1,0 +1,22 @@
+<h2 class="content-subhead">題目描述</h2><p>$$
+f(x) = \begin{cases}
+f(x-1) - h(x) &amp; \text{ if } x &gt; h(x)\\ 
+f(g(x)) - g(x) &amp; \text{ if } x \lt  h(x)\\
+1 &amp; \text{otherwise}
+\end{cases}$$</p>
+<p>$$
+h(y) = \begin{cases}
+-1 &amp; \text{ if } y \lt  2\\ 
+2 + h(y-1) - h(y-2) &amp; \text{otherwise}
+\end{cases}$$</p>
+<p>$$g(z) = \begin{cases}
+z^2 - 1 &amp; \text{ if } z \le 2\\ 
+2 &amp; \text{otherwise}
+\end{cases}$$</p>
+<h2 class="content-subhead">輸入格式</h2><p>輸入只有一行一個整數 $-5 \le x \le 5$</p>
+<h2 class="content-subhead">輸出格式</h2><p>輸出一行 $f(x)$ 的數值</p>
+<h2 class="content-subhead">範例輸入 1</h2><pre><code><div id="highlighter_524365" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">3</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">範例輸出 1</h2><pre><code><div id="highlighter_323833" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">-1</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">範例輸入 2</h2><pre><code><div id="highlighter_655307" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">-2</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">範例輸出 2</h2><pre><code><div id="highlighter_219393" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">-4</code></div></div></td></tr></tbody></table></div>
+</code></pre>

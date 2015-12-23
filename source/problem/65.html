@@ -1,0 +1,15 @@
+<h2 class="content-subhead">Problem Description</h2><p>Write a program to compute an expression using a tree. Consider the expression <code>4 + x * 7</code>. We will use the following recursive definition to express this expression tree.</p>
+<ul>
+<li>A positive integer or a variable is an expression tree.</li>
+<li><code>( operator left-tree right-tree )</code> is also an expression tree if operator is one of the <code>&#39;+&#39;</code>, <code>&#39;-&#39;</code>, <code>&#39;*&#39;</code>, or <code>&#39;/&#39;</code>, and both left-tree and right-tree are expression trees.</li>
+</ul>
+<p>Following this definition, we can use <code>( + 4 ( * x 7 ) )</code> to denote the previous expression. Now given an expression tree and the values of all variables, compute the value of this expression.</p>
+<h2 class="content-subhead">Input</h2><p>The first line of the input is the expression tree, which is less than 1000 characters. Note that every two adjacent elements of an expression tree are separated by a space. The name of the variables are <strong>valid C variable names</strong>, with no more than 32 characters. The next $n$ lines ($n \le 50$), where $n$ is the number of variables in the expression tree, indicates the value of the variable, in a form as <code>variable = v</code>, also separated by a space.</p>
+<h2 class="content-subhead">Output</h2><p>The output is the value of the expression tree.</p>
+<h2 class="content-subhead">Sample input</h2><pre><code><div id="highlighter_860739" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">( + 4 ( * x 7 ) )</code></div><div class="line number2 index1 alt1"><code class="plain">x = 5</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">Sample output</h2><pre><code><div id="highlighter_99930" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">39</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">Hint</h2><p>C 語言變數命名規則</p>
+<ul>
+<li>採用英文二十六的大小寫字母為主 (<code>&#39;a-z&#39;</code>, <code>&#39;A-Z&#39;</code>)，另加上數字 <code>&#39;0-9&#39;</code>、底線符號 <code>&#39;_&#39;</code> 及金錢符號 <code>&#39;$&#39;</code></li>
+<li>不以數字開頭</li>
+</ul>

@@ -1,0 +1,77 @@
+<h2 class="content-subhead">Problem description</h2><p>15-Puzzle is a game of moving 15 numbers in a 4 by 4 grid. There are 15 numbers from 1 to 15, each in a grid cell, and the only remaining cell is empty. One can move the number adjacent to the empty cell into it. This will exchange the positions of the empty cell and the number you just moved. Please refer to the following figure. For ease of illustration we use 0 to indicate the empty cell.</p>
+<table class="pure-table pure-table-bordered"><thead><tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody><tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+</tr>
+<tr>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+</tr>
+<tr>
+<td>13</td>
+<td>14</td>
+<td>0</td>
+<td>15</td>
+</tr>
+</tbody></table><p>By moving the 15 to the left, we have the following configuration. If the configure is exactly like this, then we will stop. This is called a <strong> &quot;winning configuration&quot; </strong>. </p>
+<table class="pure-table pure-table-bordered"><thead><tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody><tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+</tr>
+<tr>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+</tr>
+<tr>
+<td>13</td>
+<td>14</td>
+<td>15</td>
+<td>0</td>
+</tr>
+</tbody></table><p>You need to write a program to simulate the moving process. You will be given the initial configuration, and a sequence of n moves. A move is a number that was moved in a time step. For example, in the previous example the move is 15. A move could be invalid if it is a number not adjacent to the empty cell, or it is not between 1 and 15. In the previous example the only valid moves are 11, 14, and 15. </p>
+<p>Your task is to output the final configuration after applying all the moves. Note that if you encounter an invalid move you should ignore that invalid move. Also note that if you get into the winning configuration, you should report the move that cause the winning configuration, and stop immediately.</p>
+<h2 class="content-subhead">Subtasks</h2><ul>
+<li>10pt. $n$ is $0$, and the input is not a winning configuration.</li>
+<li>50pt. $n$ is between $1$ and $100$, All moves are valid, and the moves will not get into a winning configuration.</li>
+<li>20pt. $n$ is between $1$ and $100$, All moves are valid, and the moves could get into a winning configuration.</li>
+<li>20pt. $n$ is between $1$ and $100$, the moves could be invalid, and the moves could get into a winning configuration.</li>
+</ul>
+<h2 class="content-subhead">Input Format</h2><p>There are 5 rows in the input. The first 4 rows are the puzzle. There are 4 numbers in each rows. The last row is the move sequence. Each number means that that number in the puzzle has to move to the 0&#39;s position. The move sequence is end by 0.</p>
+<h2 class="content-subhead">Output Format</h2><p>There are 5 rows in the output. The first 4 rows are the final result of the puzzle. The last row is the result. If the puzzle will not get into a winning configuration, the output will be 0. If the puzzle will get into a winning configuration, the output will be 1 and the last step.   </p>
+<h2 class="content-subhead">Sample Input 1</h2><pre><code><div id="highlighter_441705" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">13 1 2 4</code></div><div class="line number2 index1 alt1"><code class="plain">5 0 3 7</code></div><div class="line number3 index2 alt2"><code class="plain">9 6 10 12</code></div><div class="line number4 index3 alt1"><code class="plain">15 8 11 14</code></div><div class="line number5 index4 alt2"><code class="plain">0</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">Sample Output 1</h2><pre><code><div id="highlighter_839853" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">13 1 2 4</code></div><div class="line number2 index1 alt1"><code class="plain">5 0 3 7</code></div><div class="line number3 index2 alt2"><code class="plain">9 6 10 12</code></div><div class="line number4 index3 alt1"><code class="plain">15 8 11 14</code></div><div class="line number5 index4 alt2"><code class="plain">0</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">Sample Input 2</h2><pre><code><div id="highlighter_504320" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">2 3 4 0</code></div><div class="line number2 index1 alt1"><code class="plain">1 5 7 8</code></div><div class="line number3 index2 alt2"><code class="plain">9 6 10 12</code></div><div class="line number4 index3 alt1"><code class="plain">13 14 11 15</code></div><div class="line number5 index4 alt2"><code class="plain">4 3 2 1 5 6 10 11 15 12 0</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">Sample Output 2</h2><pre><code><div id="highlighter_88871" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">1 2 3 4</code></div><div class="line number2 index1 alt1"><code class="plain">5 6 7 8</code></div><div class="line number3 index2 alt2"><code class="plain">9 10 11 12</code></div><div class="line number4 index3 alt1"><code class="plain">13 14 15 0</code></div><div class="line number5 index4 alt2"><code class="plain">1 15</code></div></div></td></tr></tbody></table></div>
+</code></pre>

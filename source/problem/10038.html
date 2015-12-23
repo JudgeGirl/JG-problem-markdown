@@ -1,0 +1,19 @@
+<h2 class="content-subhead">題目背景</h2><p>終於把所有練習題都放上 Judge Girl，測資都已經確認過一遍，某 M 打算離開一陣子。「反正是個令人唾棄的助教吧 ...」</p>
+<h2 class="content-subhead">題目描述</h2><p>考試出題總很難讓所有人滿意，老師決定給予學生們選擇考試出題方向，但每一個人只能提出兩種意見，接著老師會出一套方案滿足每一位學生的其中一種意見。由於出一套題步驟繁瑣，把數個意見出在同一題非常困難，最後每一種意見將單獨被出成一道題。</p>
+<p>由於助教們要負責出測資、檢驗測資正確與可行性，希望題目數量越少越好，否則助教會忙翻天。現在要找到最少題目來滿足所有學生的需求。</p>
+<p>例如 :</p>
+<ul>
+<li>現在有 4 名學生的意見</li>
+<li>四名學生分別提案 $(0, 1), (100, 1), (100, 0), (100, 200)$</li>
+<li>如果選擇 $\lbrace  0, 100 \rbrace $ 或者是 $\lbrace  1, 100 \rbrace $ 都是最好的選擇，助教只需要完成 2 題的檢驗。相反地，如果 $\lbrace 0, 100, 200 \rbrace $ 雖然可以滿足所有學生，但需要出成 3 道題目。</li>
+</ul>
+<h2 class="content-subhead">輸入格式</h2><p>只有一組測資，每組第一行會有一個整數 $N$，表示有多少位學生，接下來會有 $N$ 行，每 $i$ 行上會有兩個整數 $A_i, B_i$ 表示第 $i$ 個學生的出題意見。</p>
+<ul>
+<li>$0 \lt  N \le 1000$</li>
+<li>$0 \le A_i, \; B_i \le 10000$</li>
+<li>意見類型總數不超過 100 種</li>
+</ul>
+<h2 class="content-subhead">輸出格式</h2><p>對於每一組測資輸出一行，表示最少要準備的方案數量能滿足所有學生。</p>
+<h2 class="content-subhead">範例輸入</h2><pre><code><div id="highlighter_370188" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">4</code></div><div class="line number2 index1 alt1"><code class="plain">0 1</code></div><div class="line number3 index2 alt2"><code class="plain">100 1</code></div><div class="line number4 index3 alt1"><code class="plain">100 0</code></div><div class="line number5 index4 alt2"><code class="plain">100 200</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">範例輸出</h2><pre><code><div id="highlighter_375991" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">2</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">提示</h2><p>DLX </p>

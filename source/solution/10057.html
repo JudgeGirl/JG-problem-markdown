@@ -1,0 +1,66 @@
+<blockquote>
+<p>不負責任的中文翻譯 by Morris</p>
+</blockquote>
+<h2 class="content-subhead">題目描述</h2><p>實作一個可以從任意起始位置開始的陣列 (相對於一般 C 語言中，從 0 開始索引的陣列)，必須實作以下幾個函數：</p>
+<ul>
+<li><p><code>void init(ARRAY *darray,  int startIndex, int endIndex);</code><br>初始化陣列，將每一個索引值 $\mathit{index} \in \lbrack \mathit{start}, \; \mathit{end}\;]$ 不存在對應數值。</p>
+</li>
+<li><p><code>int set(ARRAY *array, int index, int value);</code><br>如果 $\mathit{index}$ 處於 $\mathit{array}$ 範圍內，則設定 $\mathit{array}$ 索引值 $\mathit{index}$ 對應的數值為 $\mathit{value}$，並且函數回傳 <code>1</code>。反之，在超出邊界情況函數回傳 <code>-2147483648</code>。</p>
+</li>
+<li><p><code>int get(ARRAY *array, int index);</code><br>如果 $\mathit{index}$ 處於 $\mathit{array}$ 範圍內，且 $\mathit{array}$ 索引值 $\mathit{index}$ 存在對應數值，直接回傳對應的數值 $\mathit{value}$。若不存在對應數值，則函數回傳 <code>-2147483647</code>。最後，在超出邊界情況函數回傳 <code>-2147483648</code>。</p>
+</li>
+<li><p><code>void print(ARRAY *array);</code><br>針對 $\mathit{array}$，將 $\mathit{index} \in \lbrack \mathit{start}, \; \mathit{end}\;]$ 索引值從小到大依序輸出，對於每一個索引值輸出一行整數。若對應值不存在，則輸出 <code>No value</code>。</p>
+</li>
+<li><p><code>void sort(ARRAY *array);</code><br>$\mathit{array}$ 所有元素由小到大排序，若某個索引值對應的數值不存在，則暫時視為對應值為 $\mathit{undefined}$。排序時，$\mathit{undefined}$ 視為比任何數都小。  </p>
+</li>
+</ul>
+<h2 class="content-subhead">限制</h2><ul>
+<li>你可以假設 $\vert \mathit{right} - \mathit{left}+1\vert  \le 2048$</li>
+</ul>
+<h3 class="content-subhead">實例解釋</h3><p>例如實作 $\mathit{array}\lbrack 3 \text{ ... } 6]$，經過以下步驟</p>
+<ol>
+<li><code>ARRAY arr;</code></li>
+<li><code>init(&amp;arr, 3, 6);</code></li>
+<li><code>set(&amp;arr, 3, 9);</code></li>
+<li><code>set(&amp;arr, 4, 1);</code></li>
+</ol>
+<p>四個步驟後得到：</p>
+<table class="pure-table pure-table-bordered"><thead><tr>
+<th>$\mathit{index}$</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+</tr>
+</thead><tbody><tr>
+<td>$\mathit{array}\lbrack ]$</td>
+<td>9</td>
+<td>1</td>
+<td>$\mathit{undefined}$</td>
+<td>$\mathit{undefined}$</td>
+</tr>
+</tbody></table><p>接下來若進行 <code>sort(&amp;arr)</code>：</p>
+<table class="pure-table pure-table-bordered"><thead><tr>
+<th>$\mathit{index}$</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+</tr>
+</thead><tbody><tr>
+<td>$\mathit{array}\lbrack ]$</td>
+<td>$\mathit{undefined}$</td>
+<td>$\mathit{undefined}$</td>
+<td>1</td>
+<td>9</td>
+</tr>
+</tbody></table><p>相當於對應值重新打亂。</p>
+<h2 class="content-subhead">Windows</h2><p><div class="pure-u-g"><div class="pure-u-5-5"><a clss="" title=Windows 快速編輯 href=http://i.imgur.com/LpBHZ59.gif><img class="pure-img-responsive" src="http://i.imgur.com/LpBHZ59.gif" alt="Windows 快速編輯"></img></a><span class="caption">Windows 快速編輯</span></div></div></p>
+<ul>
+<li>執行編譯後出現小黑窗，在小黑窗標題列按下 <strong> 右鍵 </strong>，點選選項單中的 <strong>內容</strong>。</li>
+<li>勾起 <strong>快速編輯</strong>，並套用到所有視窗。</li>
+<li><code>ctrl + c</code> 複製測資，在小黑窗按下滑鼠 <strong> 右鍵 </strong> 相當於貼上。</li>
+</ul>
+<h3 class="content-subhead">Dev-C++</h3><p><div class="pure-u-g"><div class="pure-u-5-5"><a clss="" title=Dev-C++ 編譯參數 href=http://i.imgur.com/y2xirwP.gif><img class="pure-img-responsive" src="http://i.imgur.com/y2xirwP.gif" alt="Dev-C++ 編譯參數"></img></a><span class="caption">Dev-C++ 編譯參數</span></div></div></p>
+<h3 class="content-subhead">CodeBlocks</h3><p>CodeBlocks 沒辦法像 Dev-C++ 直接編譯多檔案，一定要藉由開專案的方式，同裡 Dev-C++ 也能用開專案的方式編譯。</p>
+<p><div class="pure-u-g"><div class="pure-u-5-5"><a clss="" title=CodeBlocks 快速專案配置 href=http://i.imgur.com/Zi5OrQ7.gif><img class="pure-img-responsive" src="http://i.imgur.com/Zi5OrQ7.gif" alt="CodeBlocks 快速專案配置"></img></a><span class="caption">CodeBlocks 快速專案配置</span></div></div></p>

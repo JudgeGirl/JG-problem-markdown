@@ -1,0 +1,11 @@
+<h3 class="content-subhead">Task Description</h3><p>Write a function to determine the number of intersections in a city. You will be given a city map as a $100$ by $100$ integer array. When the element in the array is 1, it means there is a section of road in that place. When the element in the array is not 1, then it is not a section of road. Now we define all kinds of intersections.</p>
+<ul>
+<li>A cell is an intersection if it is 1, and all of its four neighbors are also 1.</li>
+<li>A cell is a T-junction, if it is 1, and exactly three of its neighbors are also 1.</li>
+<li>A cell is a turn if it is 1 and exactly two of its neighbors are 1, and these two neighbors do not form a straight line with the cell.</li>
+<li>A cell is a dead end if it is 1, and exactly one of its neighbors is 1.</li>
+</ul>
+<p>The prototype of the function is as follows.</p>
+<pre><code><div id="highlighter_534546" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="keyword bold">void</code> <code class="plain">intersection(</code><code class="color1 bold">int</code> <code class="plain">map[100][100], </code><code class="color1 bold">int</code> <code class="plain">result[4]);</code></div></div></td></tr></tbody></table></div>
+</code></pre><p>The map parameter is the city map and the result is where you should place the results - the number of intersection should be placed in result[0], and T-junction should be placed in result[1], etc.</p>
+<h2 class="content-subhead">Reference</h2><p>Problem 33. Intersections </p>

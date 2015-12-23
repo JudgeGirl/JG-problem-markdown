@@ -1,10 +1,9 @@
 var marked = require('marked');
-
-// Synchronous highlighting with highlight.js
+var hl = require('node-syntaxhighlighter');
 marked.setOptions({
-  highlight: function (code) {
-    return require("highlight").Highlight(code);
-  }
+    highlight: function (code) {
+        return hl.highlight(code, hl.getLanguage('cpp'), {gutter: false});
+    }
 });
 
 // var markdownString = '```\nfor(var i=0;i<10;i++)alert(i);\n```';

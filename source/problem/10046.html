@@ -1,0 +1,13 @@
+<h2 class="content-subhead">題目描述</h2><p>有 $n$ 位同學，使用大寫字母分別標示為 <code>&#39;A&#39;</code> 到 <code>&#39;Z&#39;</code>。現在將他們排成一列，由於某些同學個性害羞，不想排第一位 ... 等，請把所有方法數列出來。</p>
+<p>如 $n = 3$，<code>A</code> 不排 1、<code>B</code> 不排 2，則有以下幾種排法</p>
+<pre><code><div id="highlighter_470146" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">BAC</code></div><div class="line number2 index1 alt1"><code class="plain">BCA</code></div><div class="line number3 index2 alt2"><code class="plain">CAB</code></div></div></td></tr></tbody></table></div>
+</code></pre><p>方便起見，請按照字典順序輸出。</p>
+<h2 class="content-subhead">輸入格式</h2><p>多組測資，每一組第一行會有兩個整數 $n, \; m$，表示有 $n$ 位同學和接下來有 $m$ 條規則。接下來 $m$ 行，每一行上會有兩個整數 $x, \; y$，表示第 $x$ 位同學不排第 $y$ 個位置。</p>
+<ul>
+<li>$1 \le n \le 10$</li>
+<li>$1 \le m \le 100$</li>
+</ul>
+<h2 class="content-subhead">輸出格式</h2><p>對於每一組測資，若有 $P$ 種方法數，則輸出 $P$ 行結果。</p>
+<h2 class="content-subhead">範例輸入</h2><pre><code><div id="highlighter_746043" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">3 2</code></div><div class="line number2 index1 alt1"><code class="plain">1 1</code></div><div class="line number3 index2 alt2"><code class="plain">2 2</code></div><div class="line number4 index3 alt1">&nbsp;</div><div class="line number5 index4 alt2"><code class="plain">3 3</code></div><div class="line number6 index5 alt1"><code class="plain">1 1</code></div><div class="line number7 index6 alt2"><code class="plain">2 2</code></div><div class="line number8 index7 alt1"><code class="plain">3 1</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">範例輸出</h2><pre><code><div id="highlighter_99185" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">BAC</code></div><div class="line number2 index1 alt1"><code class="plain">BCA</code></div><div class="line number3 index2 alt2"><code class="plain">CAB</code></div><div class="line number4 index3 alt1"><code class="plain">BAC</code></div><div class="line number5 index4 alt2"><code class="plain">BCA</code></div></div></td></tr></tbody></table></div>
+</code></pre>

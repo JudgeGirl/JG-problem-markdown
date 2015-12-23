@@ -1,0 +1,10 @@
+<h2 class="content-subhead">Task Description</h2><p>假設有 $n$ 個物件和一個背包。第 $i$ 個物件的重量為 $w_i$，價值為 $v_i$，而背包有總重量限制 $W$。如何選擇物件放入背包中，使得放入背包的物件總重量不超過背包總重量量限制 $W$，且使得放入背包的物件總價值為最大？</p>
+<h2 class="content-subhead">Input</h2><p>輸入第一行為物件個數 $n$ 及背包重量限制 $W$。接下來會有 $n$ 行，每行有兩個數字，分別是第i個物件的重量 $w_i$ 和價值 $v_i$。</p>
+<h3 class="content-subhead">Limits</h3><ul>
+<li>$0 \lt  n \le 20$</li>
+<li>$0 \lt  W \le 10000$</li>
+<li>$0 \lt  w_i, v_i \le 1000$</li>
+</ul>
+<h2 class="content-subhead">Sample input　</h2><pre><code><div id="highlighter_33326" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">5 6</code></div><div class="line number2 index1 alt1"><code class="plain">3 1</code></div><div class="line number3 index2 alt2"><code class="plain">1 3</code></div><div class="line number4 index3 alt1"><code class="plain">2 3</code></div><div class="line number5 index4 alt2"><code class="plain">3 5</code></div><div class="line number6 index5 alt1"><code class="plain">3 5</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">Sample output</h2><pre><code><div id="highlighter_872024" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">11</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">HINT</h2><p>可以使用遞迴的方法來求答案。如果我們將第一個物件放入背包，結果是不是得到一個跟原來問題很相近的問題? 如果我們不將第一個物件放入背包，結果是不是也得到一個跟原來問題很像的問題？</p>

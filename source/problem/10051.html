@@ -1,0 +1,77 @@
+<h2 class="content-subhead">Problem Description</h2><p>15-Puzzle is a game of moving 15 numbers in a 4 by 4 grid. There are 15 numbers from 1 to 15, each in a grid cell, and the only remaining cell is empty. One can move the number adjacent to the empty cell into it. This will exchange the positions of the empty cell and the number you just moved. Please refer to the following figure. For ease of illustration we use 0 to indicate the empty cell.</p>
+<table class="pure-table pure-table-bordered"><thead><tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody><tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+</tr>
+<tr>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+</tr>
+<tr>
+<td>13</td>
+<td>14</td>
+<td>0</td>
+<td>15</td>
+</tr>
+</tbody></table><p>By moving the 15 to the left, we have the following configuration. If the configure is exactly like this, then we will stop. This is called a &quot;winning configuration&quot;. </p>
+<table class="pure-table pure-table-bordered"><thead><tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody><tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+</tr>
+<tr>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+</tr>
+<tr>
+<td>13</td>
+<td>14</td>
+<td>15</td>
+<td>0</td>
+</tr>
+</tbody></table><p>Now given a board, please determine if one can reach the winning configuration within K moves.</p>
+<h2 class="content-subhead">Subtasks</h2><ul>
+<li>10pt. $K$ is $0$.</li>
+<li>10pt. $K$ is $1$.</li>
+<li>10pt. $K$ is $2$.</li>
+<li>60pt. $K$ is no more than $10$.</li>
+<li>10pt. $K$ is no more than $15$.</li>
+</ul>
+<h2 class="content-subhead">Hints</h2><p>You can imagine a solution of $K$ moves as a sequence of 0, 1, 2, and 3, in which 0 means move the empty block up, 1 means down, etc. By &quot;move the empty block up&quot; we actually mean move the number above the empty block down. Now we can enumerate all sequences starting with 0, then 1, then 2, recursively. Any of these sequences reaches the winning configuration within $K$ moves is a yes.</p>
+<p>To solve the last subtask you need to realize that one move can only move one number into the correct position. If the number of numbers in wrong positions is more than the number of moves left then there could be no solutions.</p>
+<h2 class="content-subhead">Sample Input 1</h2><pre><code><div id="highlighter_805577" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">0</code></div><div class="line number2 index1 alt1"><code class="plain">1 2 3 4</code></div><div class="line number3 index2 alt2"><code class="plain">5 6 7 8</code></div><div class="line number4 index3 alt1"><code class="plain">9 10 11 12</code></div><div class="line number5 index4 alt2"><code class="plain">13 14 15 0</code></div><div class="line number6 index5 alt1">&nbsp;</div><div class="line number7 index6 alt2"><code class="plain">0</code></div><div class="line number8 index7 alt1"><code class="plain">1 2 3 4</code></div><div class="line number9 index8 alt2"><code class="plain">5 6 7 8</code></div><div class="line number10 index9 alt1"><code class="plain">9 10 11 0</code></div><div class="line number11 index10 alt2"><code class="plain">13 14 15 12</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">Sample Output 1</h2><pre><code><div id="highlighter_568032" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">1</code></div><div class="line number2 index1 alt1"><code class="plain">0</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">Sample Input 2</h2><pre><code><div id="highlighter_688609" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">1</code></div><div class="line number2 index1 alt1"><code class="plain">1 2 3 4</code></div><div class="line number3 index2 alt2"><code class="plain">5 6 7 8</code></div><div class="line number4 index3 alt1"><code class="plain">9 10 11 12</code></div><div class="line number5 index4 alt2"><code class="plain">13 14 0 15</code></div><div class="line number6 index5 alt1">&nbsp;</div><div class="line number7 index6 alt2"><code class="plain">1</code></div><div class="line number8 index7 alt1"><code class="plain">1 2 3 4</code></div><div class="line number9 index8 alt2"><code class="plain">5 6 7 8</code></div><div class="line number10 index9 alt1"><code class="plain">9 10 11 12</code></div><div class="line number11 index10 alt2"><code class="plain">0 13 14 15</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">Sample Ouput 2</h2><pre><code><div id="highlighter_589623" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">1</code></div><div class="line number2 index1 alt1"><code class="plain">0</code></div></div></td></tr></tbody></table></div>
+</code></pre>

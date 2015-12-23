@@ -1,0 +1,21 @@
+<h2 class="content-subhead">Task Description</h2><p>編寫一個程式決定朋友關係，首先我們需要定義什麼是人，我們假設最多處理 10000 人，最多有 10000 對朋友。每一個人都有一個介於 0 和 9999 的整數編號，以及不超過 31 個字元的名字。我們以如下的結構表示。</p>
+<pre><code class="lang-c"><div id="highlighter_68491" class="syntaxhighlighter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="keyword bold">struct</code> <code class="plain">person {</code></div><div class="line number2 index1 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">unsigned </code><code class="color1 bold">int</code> <code class="plain">id;</code></div><div class="line number3 index2 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="color1 bold">char</code> <code class="plain">name[32];</code></div><div class="line number4 index3 alt1"><code class="plain">};</code></div></div></td></tr></tbody></table></div>
+</code></pre>
+<p>根據一般定義朋友是彼此的，所以我們用下面的結構來描述兩位朋友。</p>
+<pre><code class="lang-c"><div id="highlighter_903732" class="syntaxhighlighter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="keyword bold">struct</code> <code class="plain">friends {</code></div><div class="line number2 index1 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">unsigned id1;</code></div><div class="line number3 index2 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">unsigned id2;</code></div><div class="line number4 index3 alt1"><code class="plain">};</code></div></div></td></tr></tbody></table></div>
+</code></pre>
+<p>假設你有一個包含所有朋友訊息的二進制檔案 <code>friends</code> 檔案，<code>friends</code> 依序包含以下的資料。</p>
+<ul>
+<li>系統中的人數 $P$，佔四個位元組</li>
+<li>$P$ 個 <code>struct person</code> 的內容</li>
+<li>系統中的朋友對數 $F$，佔四個位元組</li>
+<li>$F$ 個 <code>struct friends</code> 的內容</li>
+</ul>
+<p>請參考範例 <code>friends</code>。檔案 <code>friends</code> 有 4 個人的資訊 - John, Mary, Tom, Jack. 而且 Mary 和 John 是朋友，Tom 和 Mary 是朋友。</p>
+<h2 class="content-subhead">Input</h2><p>輸入每行為一個命令，包含兩個朋友，只含有 end 的一行表示輸入的結束。另外你必須讀入一個包含 <code>struct friends</code> 結構的二進制檔案 <code>friends</code>。</p>
+<h2 class="content-subhead">Output</h2><p>如果輸入兩個名字為朋友，也就是說，存在一個 <code>struct friends</code> 的內容與兩個名字相符，則輸出 <code>yes</code>，否則輸出 <code>no</code>。</p>
+<h2 class="content-subhead">Sample input</h2><pre><code><div id="highlighter_37092" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">John Mary</code></div><div class="line number2 index1 alt1"><code class="plain">Tom Mary</code></div><div class="line number3 index2 alt2"><code class="plain">Jack Tom</code></div><div class="line number4 index3 alt1"><code class="plain">end</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">Sample output</h2><pre><code><div id="highlighter_780435" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">yes</code></div><div class="line number2 index1 alt1"><code class="plain">yes</code></div><div class="line number3 index2 alt2"><code class="plain">no</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">Hint</h2><ul>
+<li>參考 <code>friends</code> 格式下載 <a href="https://github.com/JudgeGirl/JG-testdata/raw/master/practice/225/1.friends">here</a></li>
+</ul>

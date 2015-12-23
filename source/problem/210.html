@@ -1,0 +1,16 @@
+<h2 class="content-subhead">Task Description</h2><p>編寫一個程式來模擬一個資料庫服務器。程式首先會先讀取數據到資料庫，然後一次執行一個查詢命令。</p>
+<h2 class="content-subhead">Input</h2><p>輸入第一部分為資料。第一行為資料筆數 $n$，$n$ 不超過 $50$。以下 $n$ 行一行一筆資料。資料內容由以下欄位組成。</p>
+<ul>
+<li><code>lastname</code>，以字串儲存，長度不超過 80 字元。</li>
+<li><code>firstname</code>，以字串儲存，長度不超過 80 字元。</li>
+<li><code>ID</code>，以字串儲存，長度不超過 80 字元。</li>
+<li><code>salary</code>，以整數儲存。</li>
+<li><code>age</code>，以整數儲存。</li>
+</ul>
+<p>輸入第二部分是 SQL 查詢命令。命令格式如下：field 可以是 lastname、firstname、ID、salary 或 age。他們可以以任何順序出現並重複。欄位出現的數目至少為一，至多為八。condition 符合的資料才會被輸出。</p>
+<pre><code><div id="highlighter_600348" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">select field1 field2 ... fieldn where condition</code></div></div></td></tr></tbody></table></div>
+</code></pre><p>一個 condition 包括 field operator constant。field 為任意欄位。如果比較欄位是字串，operator 可能是 ==、!=。如果比較欄位是數字，operator 可能是 ==、&gt; 或 &lt;。另外 condition 的 constant 長度不超過 80 字元。</p>
+<h2 class="content-subhead">Output</h2><p>輸出為查詢結果。對於每一筆查詢，如果結果有很多筆資料，輸出順序請依照資料的輸入順序。</p>
+<h2 class="content-subhead">Sample Input</h2><pre><code><div id="highlighter_339399" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">4</code></div><div class="line number2 index1 alt1"><code class="plain">Liu Pangfeng A123456789 80000 40</code></div><div class="line number3 index2 alt2"><code class="plain">Wu Janet B123456789 79999 30</code></div><div class="line number4 index3 alt1"><code class="plain">Liu Kevin C123456789 0 10</code></div><div class="line number5 index4 alt2"><code class="plain">Liu Eric C123456789 0 7</code></div><div class="line number6 index5 alt1"><code class="plain">2</code></div><div class="line number7 index6 alt2"><code class="plain">select lastname firstname ID where salary > 1000</code></div><div class="line number8 index7 alt1"><code class="plain">select firstname lastname salary lastname where lastname == Liu</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">Sample Output</h2><pre><code><div id="highlighter_294498" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">Liu Pangfeng A123456789</code></div><div class="line number2 index1 alt1"><code class="plain">Wu Janet B123456789</code></div><div class="line number3 index2 alt2"><code class="plain">Pangfeng Liu 80000 Liu</code></div><div class="line number4 index3 alt1"><code class="plain">Kevin Liu 0 Liu</code></div><div class="line number5 index4 alt2"><code class="plain">Eric Liu 0 Liu</code></div></div></td></tr></tbody></table></div>
+</code></pre>

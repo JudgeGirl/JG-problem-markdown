@@ -1,0 +1,53 @@
+<h2 class="content-subhead">Problem Description</h2><p>Read problems statements in <span class='tooltip'><span class='abbr'>Mandarin Chinese</span><span class='popup'>Morris AI 翻譯：<br/> 在 $m \times n$ 個盤面上恰好填入 $1$ 到 $mn$ 的所有數字，現在給與每一行、每一列的總和，請逆推回去得到原始盤面。如果盤面不只有一種，輸出任一種皆可，反之，無解盤面請輸出 <strong>no solution</strong> 一行。</span></a></p>
+<p>There is a $m$ by $n$ matrix consisting of integers from 1 to $mn$. You are given the sum of the rows and the sums of the columns, and please write a program to determine the number in each cell of the matrix. Consider the following example.</p>
+<table class="pure-table pure-table-bordered"><thead><tr>
+<th>R\C</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>$R\lbrack ]$</th>
+</tr>
+</thead><tbody><tr>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>10</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>26</td>
+</tr>
+<tr>
+<td>3</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+<td>42</td>
+</tr>
+<tr>
+<td>$C\lbrack ]$</td>
+<td>15</td>
+<td>18</td>
+<td>21</td>
+<td>24</td>
+<td>none</td>
+</tr>
+</tbody></table><p>Now you are given $m = 3$, $n = 4$, and $10$, $26$, and $42$ as the sums of rows, and $15$, $18$, $21$ and $24$ as the sums of columns. The locations of all numbers will be as above. Your task is to print the numbers as a $m$ by $n$ matrix. If there are no solutions, print <code>no solution</code>.</p>
+<h2 class="content-subhead">Subtasks</h2><ul>
+<li>10pt. $n = 1$ or $m = 1$.</li>
+<li>15pt. $m = n = 2$, and there is exacly one solution.</li>
+<li>15pt. $m = n = 2$. and there could be no solution.</li>
+<li>50pt. $m \times n \le 12$, and there could be no solution.</li>
+<li>10pt. $m \times n \le 16$, and there could be no solution.</li>
+</ul>
+<h2 class="content-subhead">Sample Input</h2><pre><code><div id="highlighter_780284" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">1 3</code></div><div class="line number2 index1 alt1"><code class="plain">6</code></div><div class="line number3 index2 alt2"><code class="plain">1 2 3</code></div><div class="line number4 index3 alt1"><code class="plain">2 1</code></div><div class="line number5 index4 alt2"><code class="plain">1 2</code></div><div class="line number6 index5 alt1"><code class="plain">3</code></div><div class="line number7 index6 alt2"><code class="plain">3 2</code></div><div class="line number8 index7 alt1"><code class="plain">6 6 9</code></div><div class="line number9 index8 alt2"><code class="plain">6 15</code></div><div class="line number10 index9 alt1"><code class="plain">4 4</code></div><div class="line number11 index10 alt2"><code class="plain">10 26 42 58</code></div><div class="line number12 index11 alt1"><code class="plain">28 32 36 40</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">Sample Output</h2><pre><code><div id="highlighter_421167" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">1 2 3</code></div><div class="line number2 index1 alt1"><code class="plain">1</code></div><div class="line number3 index2 alt2"><code class="plain">2</code></div><div class="line number4 index3 alt1"><code class="plain">1 5</code></div><div class="line number5 index4 alt2"><code class="plain">2 4</code></div><div class="line number6 index5 alt1"><code class="plain">3 6</code></div><div class="line number7 index6 alt2"><code class="plain">1 2 3 4</code></div><div class="line number8 index7 alt1"><code class="plain">5 6 7 8</code></div><div class="line number9 index8 alt2"><code class="plain">9 10 11 12</code></div><div class="line number10 index9 alt1"><code class="plain">13 14 15 16</code></div></div></td></tr></tbody></table></div>
+</code></pre>

@@ -1,0 +1,20 @@
+<h2 id="task-description">Task Description</h2>
+<p>Write a function to determine the number and types of intersections in a city. We use a $n$ by $n$ integer array to represent a city. A one in the array indicates a road, and a zero in the array indicates a building. There are four kinds of intersection of roads.</p>
+<ul>
+<li>A cell is an intersection if it is one, and all of its four neighbors are also one.</li>
+<li>A cell is a T-junction if it is $1$ and exactly three of its neighbors are $1$.</li>
+<li>A cell is a turn if it is $1$ and exactly two of its neighbors are $1$, and these two neighbors do not form a * straight line that goes through the cell.</li>
+<li>A cell is a dead end if it is $1$, and exactly one of its neighbors is $1$.
+Now given the matrix, please compute the number of intersections, $T$-junctions, turns and dead ends.</li>
+</ul>
+<h2 id="limits">Limits</h2>
+<p>$n$ is no more than $100$.</p>
+<h2 id="input-format">Input Format</h2>
+<p>There are $n + 1$ lines in the input. The first line has $n$. Each of the next lines has $n$ integers. These integers are either $0$ or $1$.</p>
+<h2 id="output-format">Output Format</h2>
+<p>There are four lines in the output. These four lines has the number of intersections, T-junctions, turns and dead ends, respectively.</p>
+<h2 id="sample-input">Sample Input</h2>
+<pre><code><div id="highlighter_570893" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">5</code></div><div class="line number2 index1 alt1"><code class="plain">1 1 1 1 1</code></div><div class="line number3 index2 alt2"><code class="plain">1 0 1 0 1</code></div><div class="line number4 index3 alt1"><code class="plain">1 1 1 1 1</code></div><div class="line number5 index4 alt2"><code class="plain">1 0 1 0 1</code></div><div class="line number6 index5 alt1"><code class="plain">1 1 1 0 1</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 id="sample-output">Sample Output</h2>
+<pre><code><div id="highlighter_966893" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">1</code></div><div class="line number2 index1 alt1"><code class="plain">3</code></div><div class="line number3 index2 alt2"><code class="plain">4</code></div><div class="line number4 index3 alt1"><code class="plain">1</code></div></div></td></tr></tbody></table></div>
+</code></pre>

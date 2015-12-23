@@ -1,0 +1,17 @@
+<h2 class="content-subhead">Task Description</h2><p>Write a program to reconstruct a binary search tree and find the distances of some key pairs. You will be given the keys and their level number in the binary search tree. The level of a tree node is recursively defined as follows.</p>
+<ul>
+<li>The level of the root is 1</li>
+<li>If a node is not the root, then its level is the level of its parent plus 1.</li>
+</ul>
+<p>We will ask you to compute the distance of each key pair in the following input.
+Now given the keys, their level numbers, and key pairs to evaluate, you must reconstruct the binary search tree, and output the distance for each key pair.</p>
+<p><div class="pure-u-g"><div class="pure-u-5-5"><a clss="" title=p134 href=/images/problems/p134.png><img class="pure-img-responsive" src="/images/problems/p134.png" alt="p134"></img></a><span class="caption">p134</span></div></div></p>
+<p>寫一個程式重建一棵二元搜尋樹，並計算二元搜尋樹上給定的兩個節點之間的距離。</p>
+<h2 class="content-subhead">Input</h2><p>The first line of the input is the number of tree nodes ($N$). Each of the next $N$ lines has the key, then the level number of the key. Then there is a number $P$, with $P$ pairs of keys in the following. You may assume that all keys are different. Also the two keys in every key pair are different. Keys and level numbers are all integers between $-2^{31}$ and $2^{31}-1$. $N \le 1000$</p>
+<p>輸入的第一行為一個整數 $n$，代表此樹上的節點總數。接下來有 $n$ 行，每行是一個節點的資訊，有兩個整數 $d$ 和 $l$，分別代表該節點所存放的資料和該節點所在的層級 (註：層級的定義是與根節點的距離加上一，所以根節點本身的層級為 1)。輸入保證資料沒有重複，範圍在 <code>int</code> 之內，且能建回唯一一棵合法的二元搜尋樹。</p>
+<p>接有一個整數 $p$，代表詢問的次數。之後有 $p$ 行，每行有兩個整數 $a$, $b$，代表兩個節點的資料。 $a$, $b$ 保證存在樹上並且相異。</p>
+<h2 class="content-subhead">Output</h2><p>The output has $P$ lines. The $i$-th line is the distance of The output has $N$ lines. The $i$-th line has the $i$-th key in pre-order tree traversal.</p>
+<p>請輸出 $a$, $b$ 兩點之間的距離。</p>
+<h2 class="content-subhead">Sample Input</h2><pre><code><div id="highlighter_351334" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">7</code></div><div class="line number2 index1 alt1"><code class="plain">6 1</code></div><div class="line number3 index2 alt2"><code class="plain">3 2</code></div><div class="line number4 index3 alt1"><code class="plain">4 4</code></div><div class="line number5 index4 alt2"><code class="plain">1 3</code></div><div class="line number6 index5 alt1"><code class="plain">2 4</code></div><div class="line number7 index6 alt2"><code class="plain">7 2</code></div><div class="line number8 index7 alt1"><code class="plain">5 3</code></div><div class="line number9 index8 alt2"><code class="plain">3</code></div><div class="line number10 index9 alt1"><code class="plain">3 6</code></div><div class="line number11 index10 alt2"><code class="plain">5 7</code></div><div class="line number12 index11 alt1"><code class="plain">2 4</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">Sample Output</h2><pre><code><div id="highlighter_701356" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">1</code></div><div class="line number2 index1 alt1"><code class="plain">3</code></div><div class="line number3 index2 alt2"><code class="plain">4</code></div></div></td></tr></tbody></table></div>
+</code></pre>

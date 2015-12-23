@@ -1,0 +1,35 @@
+<h2 class="content-subhead">Task Description</h2><p>Write a program to read a binary file of student records, and produce a HTML file for display. The definition of the student record is as in the textbook (on page 219). The HTML file should use a table to contain all the fields of a student as a row. You should produce an HTML file that looks like the following. A sample HTML file has been attached to this article.</p>
+<pre><code class="lang-c"><div id="highlighter_730089" class="syntaxhighlighter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="keyword bold">typedef</code> <code class="keyword bold">struct</code> <code class="plain">{</code></div><div class="line number2 index1 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="color1 bold">char</code> <code class="plain">name[20];</code></div><div class="line number3 index2 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="color1 bold">int</code> <code class="plain">id;</code></div><div class="line number4 index3 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="color1 bold">char</code> <code class="plain">phone[10];</code></div><div class="line number5 index4 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="color1 bold">float</code> <code class="plain">grade[4];</code></div><div class="line number6 index5 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="color1 bold">int</code> <code class="plain">birth_year;</code></div><div class="line number7 index6 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="color1 bold">int</code> <code class="plain">birth_month;</code></div><div class="line number8 index7 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="color1 bold">int</code> <code class="plain">birth_day;</code></div><div class="line number9 index8 alt2"><code class="plain">} Student;</code></div></div></td></tr></tbody></table></div>
+</code></pre>
+<table class="pure-table pure-table-bordered"><thead><tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody><tr>
+<td>name1</td>
+<td>id1</td>
+<td>phone number1</td>
+<td>grades1</td>
+<td>year1, month1, day1</td>
+</tr>
+<tr>
+<td>name2</td>
+<td>id2</td>
+<td>phone number2</td>
+<td>grades2</td>
+<td>year2, month2, day2</td>
+</tr>
+</tbody></table><p>The name of the input student file and the name out the output HTML file should be given from stdin.
+Hint: Since there will be multiple records in the binary file and the number of records is unknown, you should process record and output HTML source code one by one but not store them into a fix-sized array.</p>
+<h2 class="content-subhead">Input Format</h2><p>The first line of the input is the name of binary file, and the second line of the input is the output HTML file. Each file names have no more than 80 characters. The binary file contains an array of struct student.</p>
+<h2 class="content-subhead">Output Format</h2><p>Output your HTML file formatted like the following:</p>
+<pre><code><div id="highlighter_696193" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">&lt;table border=</code><code class="string">"1"</code><code class="plain">></code></div><div class="line number2 index1 alt1"><code class="plain">&lt;tbody></code></div><div class="line number3 index2 alt2"><code class="plain">&lt;tr></code></div><div class="line number4 index3 alt1"><code class="plain">&lt;td>%s&lt;/td></code></div><div class="line number5 index4 alt2"><code class="plain">&lt;td>%d&lt;/td></code></div><div class="line number6 index5 alt1"><code class="plain">&lt;td>%s&lt;/td></code></div><div class="line number7 index6 alt2"><code class="plain">&lt;td>%f, %f, %f, %f&lt;/td></code></div><div class="line number8 index7 alt1"><code class="plain">&lt;td>%d, %d, %d&lt;/td></code></div><div class="line number9 index8 alt2"><code class="plain">&lt;/tr></code></div><div class="line number10 index9 alt1"><code class="plain">&lt;/tbody></code></div><div class="line number11 index10 alt2"><code class="plain">&lt;/table></code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">Sample Input</h2><pre><code><div id="highlighter_366837" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">students.bin students.html</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">Sample Output</h2><p>Please referrer to the attached file</p>
+<h2 class="content-subhead">Hint</h2><ul>
+<li>參考 <code>students.bin</code> 下載 <a href="https://github.com/JudgeGirl/JG-testdata/raw/master/practice/136/students.bin">here</a></li>
+<li>參考 <code>students.html</code> 下載 <a href="https://github.com/JudgeGirl/JG-testdata/raw/master/practice/136/1.out">here</a></li>
+</ul>

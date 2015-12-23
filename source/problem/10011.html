@@ -1,0 +1,25 @@
+<h2 id="-">背景</h2>
+<p>台大生存的第二周，還能撐多久，聽不懂、聽不到。如果中秋連假後不見，不用找了。</p>
+<div class="pure-g">
+                <div class="pure-u-5-5">
+                    <img class="pure-img-responsive" src="http://i.imgur.com/qYSiT0t.jpg" alt="Peyto Lake">
+                </div>
+</div>
+
+<h2 id="problem">Problem</h2>
+<p>輸入一個 $n$ 個整數的序列 $A$，請把序列中的 <code>0</code> 搬到序列尾端，並且不改變其他非零元素的順序。</p>
+<ul>
+<li>$1 \le n \le 100000$</li>
+</ul>
+<h2 id="input-format">Input Format</h2>
+<p>輸入只有一組測資，每一組第一行會有一個整數 $n$，接下來會有 $n$ 個整數 \( A_i \)。</p>
+<h2 id="output-format">Output Format</h2>
+<p>輸出 $n$ 個整數以空白隔開。</p>
+<h2 id="sample-input">Sample Input</h2>
+<pre><code><div id="highlighter_263920" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">5</code></div><div class="line number2 index1 alt1"><code class="plain">0 1 0 3 12</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 id="sample-output">Sample Output</h2>
+<pre><code><div id="highlighter_457858" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">1 3 12 0 0</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 id="bonus">Bonus</h2>
+<p>如果一開始把數字存在陣列中，如何使用 $O(1)$ 來完成呢？在算法中命名為 in-place algorithm。</p>
+<pre><code><div id="highlighter_202304" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="preprocessor">#include &lt;stdio.h></code></div><div class="line number2 index1 alt1"><code class="preprocessor">#define MAXN 100005</code></div><div class="line number3 index2 alt2"><code class="color1 bold">int</code> <code class="plain">A[MAXN];</code></div><div class="line number4 index3 alt1"><code class="color1 bold">int</code> <code class="plain">main() {</code></div><div class="line number5 index4 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="color1 bold">int</code> <code class="plain">n, i;</code></div><div class="line number6 index5 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword bold">while</code> <code class="plain">(</code><code class="functions bold">scanf</code><code class="plain">(</code><code class="string">"%d"</code><code class="plain">, &n) == 1) {</code></div><div class="line number7 index6 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword bold">for</code> <code class="plain">(i = 0; i &lt; n; i++)</code></div><div class="line number8 index7 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions bold">scanf</code><code class="plain">(</code><code class="string">"%d"</code><code class="plain">, &A[i]);</code></div><div class="line number9 index8 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="comments">/* add your code */</code></div><div class="line number10 index9 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword bold">for</code> <code class="plain">(i = 0; i &lt; n; i++)</code></div><div class="line number11 index10 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions bold">printf</code><code class="plain">(</code><code class="string">"%d%c"</code><code class="plain">, A[i], </code><code class="string">" \n"</code><code class="plain">[i==n-1]);</code></div><div class="line number12 index11 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></div><div class="line number13 index12 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword bold">return</code> <code class="plain">0;</code></div><div class="line number14 index13 alt1"><code class="plain">}</code></div></div></td></tr></tbody></table></div>
+</code></pre>

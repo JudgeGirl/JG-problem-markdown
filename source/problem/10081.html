@@ -1,0 +1,20 @@
+<h2 class="content-subhead">題目描述</h2><p>生命遊戲中，對於任意細胞，規則如下：
+每個細胞有兩種狀態-存活或死亡，每個細胞與以自身為中心的周圍八格細胞產生互動。</p>
+<ul>
+<li>當前細胞為存活狀態時，當周圍低於 2 個 (不包含 2 個) 存活細胞時，該細胞變成死亡狀態。</li>
+<li>當前細胞為存活狀態時，當周圍有 2 個或 3 個存活細胞時， 該細胞保持原樣。</li>
+<li>當前細胞為存活狀態時，當周圍有 3 個以上的存活細胞時，該細胞變成死亡狀態。</li>
+<li>當前細胞為死亡狀態時，當周圍有 3 個存活細胞時，該細胞變成存活狀態。</li>
+</ul>
+<p>可以把最初的細胞結構定義為種子，當所有在種子中的細胞同時被以上規則處理後，可以得到第一代細胞圖。按規則繼續處理當前的細胞圖，可以得到下一代的細胞圖，周而復始。</p>
+<h2 class="content-subhead">輸入格式</h2><p>輸入第一行有兩個整數 $N$, $M$，表示盤面大小為 $N \times N$，模擬週期次數 $M$。接下來會有 $N$ 行，每一行上會有 $N$ 個字符，以 <code>0</code> 表示 $(i, j)$ 格子上的細胞屬於死亡狀態，反之 <code>1</code> 為存活狀態。</p>
+<ul>
+<li>$1 \le N \le 2000$</li>
+<li>$0 \le M \le 1000$</li>
+</ul>
+<h2 class="content-subhead">輸出格式</h2><p>對於每一組測資輸出 $N$ 行，每一行上有 $N$ 個字元表示模擬 $M$ 次的最終盤面結果。</p>
+<h2 class="content-subhead">範例輸入 1</h2><pre><code><span class="fw-code-copy-button pure-button"><i class="fa fa-clipboard"></i></span><div id="highlighter_212518" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">5 1</code></div><div class="line number2 index1 alt1"><code class="plain">10001</code></div><div class="line number3 index2 alt2"><code class="plain">00100</code></div><div class="line number4 index3 alt1"><code class="plain">01110</code></div><div class="line number5 index4 alt2"><code class="plain">00100</code></div><div class="line number6 index5 alt1"><code class="plain">01010</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">範例輸出 1</h2><pre><code><span class="fw-code-copy-button pure-button"><i class="fa fa-clipboard"></i></span><div id="highlighter_968421" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">00000</code></div><div class="line number2 index1 alt1"><code class="plain">00100</code></div><div class="line number3 index2 alt2"><code class="plain">01010</code></div><div class="line number4 index3 alt1"><code class="plain">00000</code></div><div class="line number5 index4 alt2"><code class="plain">00100</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">範例輸入 2</h2><pre><code><span class="fw-code-copy-button pure-button"><i class="fa fa-clipboard"></i></span><div id="highlighter_586269" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">5 3</code></div><div class="line number2 index1 alt1"><code class="plain">10001</code></div><div class="line number3 index2 alt2"><code class="plain">00100</code></div><div class="line number4 index3 alt1"><code class="plain">01110</code></div><div class="line number5 index4 alt2"><code class="plain">00100</code></div><div class="line number6 index5 alt1"><code class="plain">01010</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">範例輸出 2</h2><pre><code><span class="fw-code-copy-button pure-button"><i class="fa fa-clipboard"></i></span><div id="highlighter_624810" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">00000</code></div><div class="line number2 index1 alt1"><code class="plain">00000</code></div><div class="line number3 index2 alt2"><code class="plain">01110</code></div><div class="line number4 index3 alt1"><code class="plain">00000</code></div><div class="line number5 index4 alt2"><code class="plain">00000</code></div></div></td></tr></tbody></table></div>
+</code></pre>

@@ -1,0 +1,16 @@
+<h2 class="content-subhead">題目描述</h2><blockquote>
+<p>「偽物比真物更有價值」—貝木泥舟
+「真物和偽物一樣有價值」—忍野咩咩
+「偽娘比真娘更有價值」—精英島民</p>
+</blockquote>
+<p>任兩個物品的相似度 $sim(A, B) = \frac{\vert A \cap B\vert }{\vert A \cup B\vert }$，換句話說把 $A$ 具有的特徵和 $B$ 具有的特徵類型取交集、聯集個數，相除就能得到其相似度。例如有 5 個特徵，若 A 表示成 11001、B 表示成 01100，$sim(A, B) = \frac{\vert {2}\vert }{\vert {1, 2, 3, 5}\vert } = 0.25$。</p>
+<p>現在盤面上有 N 個物品、M 種特徵，請問相似度大於等於 0.8 的相似對數 $S$ 有多少種。為了讓這一題更有趣味，算法允許偽物，輸出 $\frac{S}{N(N-1)/2} \times 100 \text{%}$。</p>
+<h2 class="content-subhead">輸入格式</h2><p>每組測資，第一行會有兩個整數 $N, M$，表示有 $N$ 個物品、$M$ 種特徵。</p>
+<p>接下來會有 $N$ 行，每一行上會有 $M$ 個 01 字符，第 $i$ 行上的第 $j$ 個字元，表示第 $i$ 個物品，是否擁有特徵 $j$。</p>
+<ul>
+<li>$1 \lt  N \le 1024, 0 \lt  M \le 512$</li>
+</ul>
+<h2 class="content-subhead">輸出格式</h2><p>對於每一組輸出一行，輸出一個小數點兩位，相似度高於 0.8 的對數 / 總對數的百分比。</p>
+<h2 class="content-subhead">範例輸入</h2><pre><code><span class="fw-code-copy-button pure-button"><i class="fa fa-clipboard"></i></span><div id="highlighter_760904" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">8 10</code></div><div class="line number2 index1 alt1"><code class="plain">0111101101</code></div><div class="line number3 index2 alt2"><code class="plain">0111101100</code></div><div class="line number4 index3 alt1"><code class="plain">0111101100</code></div><div class="line number5 index4 alt2"><code class="plain">0111101101</code></div><div class="line number6 index5 alt1"><code class="plain">1100101010</code></div><div class="line number7 index6 alt2"><code class="plain">0111101100</code></div><div class="line number8 index7 alt1"><code class="plain">0111101100</code></div><div class="line number9 index8 alt2"><code class="plain">0011101111</code></div><div class="line number10 index9 alt1">&nbsp;</div><div class="line number11 index10 alt2"><code class="plain">8 10</code></div><div class="line number12 index11 alt1"><code class="plain">1111101100</code></div><div class="line number13 index12 alt2"><code class="plain">1011101100</code></div><div class="line number14 index13 alt1"><code class="plain">1010101100</code></div><div class="line number15 index14 alt2"><code class="plain">1010111010</code></div><div class="line number16 index15 alt1"><code class="plain">0100110100</code></div><div class="line number17 index16 alt2"><code class="plain">1011101100</code></div><div class="line number18 index17 alt1"><code class="plain">1110110000</code></div><div class="line number19 index18 alt2"><code class="plain">1011111100</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">範例輸出</h2><pre><code><span class="fw-code-copy-button pure-button"><i class="fa fa-clipboard"></i></span><div id="highlighter_662833" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">53.57</code></div><div class="line number2 index1 alt1"><code class="plain">25.00</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">提示</h2><p>bitset / bitmask</p>

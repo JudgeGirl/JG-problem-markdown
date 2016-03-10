@@ -1,0 +1,77 @@
+<h2 class="content-subhead">Task Description</h2><p>Professor P is very confused by the recent grading system changes. Instead of using 0 to 100 as grades, the university decides to use an <strong>A+</strong> to <strong>F</strong> system. Professor P decides to give the students the 0-100 grades as usual, but he needs a program to convert the 0-100 grades and compute the average. </p>
+<p>This program will read grades from <code>stdin</code> until <code>EOF</code>, prints each grade, and compute the average. However, professor P expects that this program will behave differently. </p>
+<ul>
+<li>If a <code>#define HUNDRED</code> is defined, this program will behave like before. The program will print all grades, then compute the average grade using integer arithmetic. On the other hand, </li>
+<li>if a <code>#define APLUS</code> is defined. This program will behave very differently. First every grade will be converted to a rank from <strong>A+</strong> to <strong>F</strong>. Each rank has a corresponding grade between 0 and 4.3, which we will define as <strong>rank grade</strong>. You program will then compute the <strong>average rank grade</strong>. Finally, each rank has another 0-100 grade, which we will define as <strong>100 grade</strong>. You will compute the <strong>average 100 grade</strong> as well.</li>
+</ul>
+<table class="pure-table pure-table-bordered"><thead><tr>
+<th>grade</th>
+<th>rank</th>
+<th>rank grade</th>
+<th>100 grade</th>
+</tr>
+</thead><tbody><tr>
+<td>90-100</td>
+<td>A+</td>
+<td>4.3</td>
+<td>95</td>
+</tr>
+<tr>
+<td>85-89</td>
+<td>A</td>
+<td>4.0</td>
+<td>87</td>
+</tr>
+<tr>
+<td>80-84</td>
+<td>A-</td>
+<td>3.7</td>
+<td>82</td>
+</tr>
+<tr>
+<td>77-79</td>
+<td>B+</td>
+<td>3.3</td>
+<td>78</td>
+</tr>
+<tr>
+<td>73-76</td>
+<td>B</td>
+<td>3.0</td>
+<td>75</td>
+</tr>
+<tr>
+<td>70-72</td>
+<td>B-</td>
+<td>2.7</td>
+<td>70</td>
+</tr>
+<tr>
+<td>67-69</td>
+<td>C+</td>
+<td>2.3</td>
+<td>68</td>
+</tr>
+<tr>
+<td>63-66</td>
+<td>C</td>
+<td>2.0</td>
+<td>65</td>
+</tr>
+<tr>
+<td>60-62</td>
+<td>C-</td>
+<td>1.7</td>
+<td>60</td>
+</tr>
+<tr>
+<td>0-59</td>
+<td>F</td>
+<td>0</td>
+<td>50</td>
+</tr>
+</tbody></table><h2 class="content-subhead">Sample Input</h2><pre><code><span class="fw-code-copy-button pure-button"><i class="fa fa-clipboard"></i></span><div id="highlighter_328175" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">66 33 99</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">Sample Output if a <code>#define HUNDRED</code> is defined</h2><pre><code><span class="fw-code-copy-button pure-button"><i class="fa fa-clipboard"></i></span><div id="highlighter_429222" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">66 33 99 66.0</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">Sample Output if a <code>#define APLUS</code> is defined</h2><pre><code><span class="fw-code-copy-button pure-button"><i class="fa fa-clipboard"></i></span><div id="highlighter_598881" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">C F A+ 2.1 70.0</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">編譯參數</h2><pre><code><span class="fw-code-copy-button pure-button"><i class="fa fa-clipboard"></i></span><div id="highlighter_852646" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">$ gcc a.c -std=c99 -O2 -DHUNDRED -o test1</code></div><div class="line number2 index1 alt1"><code class="plain">$ gcc a.c -std=c99 -O2 -DAPLUS -o test2</code></div></div></td></tr></tbody></table></div>
+</code></pre>

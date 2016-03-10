@@ -1,0 +1,28 @@
+<h2 class="content-subhead">背景</h2><p>圖片匹配和字串匹配有一點不同，字串匹配通常要求其子字串與搜尋字串完全相符，而圖片匹配則用相似度為依據，當圖片大、複雜且具有干擾，或者需要匹配數量非常多，更先進的領域會利用特徵擷取，用機率統計的方式來篩選可能的匹配數量，篩選過後才進行圖片的細節匹配。</p>
+<h2 class="content-subhead">題目描述</h2><p>給予兩個圖片 $A, B$，圖片格式為灰階影像，每個像素 $\mathit{pixel}(x, y)$ 採用 8-bits 表示，範圍為 $\mathit{pixel}(x, y) \in \lbrack 0, 255]$。</p>
+<p> 舉一個例子，有一個 $3 \times 3$ 的圖片 $A$ 和一個 $2 \times 2$ 的圖片 $B$，用矩陣表示如下：</p>
+<p>$$ A := \begin{bmatrix}
+a1 &amp; a2 &amp; a3 \\
+a4 &amp; a5 &amp; a6 \\
+a7 &amp; a8 &amp; a9
+\end{bmatrix} ,\; B := \begin{bmatrix}
+b1 &amp; b2\\
+b3 &amp; b4\\
+\end{bmatrix}$$</p>
+<p>假設左上角座標 $(1, 1)$ 即 $a1$ 的位置、$(1, 2)$ 即 $a2$ 的位置。</p>
+<ul>
+<li>若把影像 $B$ 左上角對齊 $A$ 的 $(1, 1)$ 位置，其差異程度 $\mathit{diff}(A, B) = (a1 - b1)^2 + (a2 - b2)^2 + (a4 - b3)^2 + (a5 - b4)^2$</li>
+<li>相同地，對齊 $(2, 1)$ 位置，其差異程度 $\mathit{diff}(A, B) = (a4 - b1)^2 + (a5 - b2)^2 + (a7 - b3)^2 + (a8 - b4)^2$</li>
+</ul>
+<p>比較時，整張 $B$ 都要落在 $A$ 中。現在要找到一個對齊位置 $(x, y)$，使得 $\mathit{diff}(A, B)$ 最小。</p>
+<h2 class="content-subhead">輸入格式</h2><p>多組測資，每一組第一行有四個整數 $A_H, A_W, B_H, B_W$，分別表示圖片 $A$ 的高寬、$B$ 的高寬。</p>
+<p>接下來會有 $A_H$ 行，每一行上會有 $A_W$ 個整數，第 $i$ 行上的第 $j$ 個整數 $x$ 表示 $A(i, j)$ 的灰階像素值。同樣地，接下來會有 $B_H$ 行，每一行上會有 $B_W$ 個整數，第 $i$ 行上的第 $j$ 個整數 $x$ 表示 $B(i, j)$ 的灰階像素值。</p>
+<ul>
+<li>$ 1\le A_H, A_W, B_H, B_W \le 500$</li>
+<li>$ B_H \le A_H, B_W \le A_W$</li>
+<li>$ 0 \le x \le 255$</li>
+</ul>
+<h2 class="content-subhead">輸出格式</h2><p>對於每一組測資輸出一行，兩個整數 $x, y$，滿足 $\mathit{diff}(A, B)$ 最小。若有相同情況滿足，則優先挑選 $x$ 最小，若 $x$ 仍相同，則挑選 $y$ 最小。</p>
+<h2 class="content-subhead">範例輸入</h2><pre><code><span class="fw-code-copy-button pure-button"><i class="fa fa-clipboard"></i></span><div id="highlighter_637780" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">4 4 2 2</code></div><div class="line number2 index1 alt1"><code class="plain">0 3 3 0</code></div><div class="line number3 index2 alt2"><code class="plain">0 3 3 0</code></div><div class="line number4 index3 alt1"><code class="plain">0 0 5 5</code></div><div class="line number5 index4 alt2"><code class="plain">0 0 5 5</code></div><div class="line number6 index5 alt1"><code class="plain">5 5</code></div><div class="line number7 index6 alt2"><code class="plain">5 5</code></div><div class="line number8 index7 alt1"><code class="plain">3 5 1 2</code></div><div class="line number9 index8 alt2"><code class="plain">2 3 0 4 5</code></div><div class="line number10 index9 alt1"><code class="plain">0 0 7 0 0</code></div><div class="line number11 index10 alt2"><code class="plain">0 0 7 0 0</code></div><div class="line number12 index11 alt1"><code class="plain">3 4</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">範例輸出</h2><pre><code><span class="fw-code-copy-button pure-button"><i class="fa fa-clipboard"></i></span><div id="highlighter_96018" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">3 3</code></div><div class="line number2 index1 alt1"><code class="plain">1 1</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">備註</h2><p>別花太久的時間在這一題</p>

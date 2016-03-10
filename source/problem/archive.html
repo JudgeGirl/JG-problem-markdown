@@ -1,0 +1,45 @@
+<h2 class="content-subhead">歡迎光臨, 計算機程式設計課之批改娘系統</h2><ul>
+<li>CSIE 1210 雙班 加簽授權碼 於 2015/09/15 Tue. 起至 <strong> 資 332 實驗室 </strong> 找 TA 拿取 (限有在課堂上 <strong> 到場登記 </strong> 加簽的同學)。</li>
+<li>請各位同學拿取到發送到信箱密碼後自行修改密碼<ul>
+<li>登入 -&gt; BXXXXXX (點選自己的帳號) -&gt; EDIT PROFILE 完成修改。</li>
+</ul>
+</li>
+</ul>
+<h2 class="content-subhead">聯絡資訊</h2><ul>
+<li><a href="https://www.facebook.com/ntucsiec2014xiaominglin">Facebook 林小明 TA 粉絲頁</a></li>
+<li><a href="https://sites.google.com/site/ntucsiec2015/">課程網頁</a></li>
+<li><a href="dplabta@gmail.com">dplabta@gmail.com</a> 課程相關問題</li>
+</ul>
+<h2 class="content-subhead">工作站</h2><pre><code><span class="fw-code-copy-button pure-button"><i class="fa fa-clipboard"></i></span><div id="highlighter_779237" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">$ ssh b01902000@linux1.csie.ntu.edu.tw</code></div></div></td></tr></tbody></table></div>
+</code></pre><pre><code><span class="fw-code-copy-button pure-button"><i class="fa fa-clipboard"></i></span><div id="highlighter_726793" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">$ vim first_problem.c</code></div><div class="line number2 index1 alt1"><code class="plain">&lt;&lt; keyboard pressed </code><code class="string">'i'</code> <code class="plain">into the insert mode</code></div><div class="line number3 index2 alt2"><code class="preprocessor">#include &lt;stdio.h></code></div><div class="line number4 index3 alt1"><code class="color1 bold">int</code> <code class="plain">main() {</code></div><div class="line number5 index4 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions bold">puts</code><code class="plain">(</code><code class="string">"hello, world"</code><code class="plain">);</code></div><div class="line number6 index5 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword bold">return</code> <code class="plain">0;</code></div><div class="line number7 index6 alt2"><code class="plain">}</code></div></div></td></tr></tbody></table></div>
+</code></pre><pre><code><span class="fw-code-copy-button pure-button"><i class="fa fa-clipboard"></i></span><div id="highlighter_818545" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">$ gcc first\_problem.c -o first.out</code></div><div class="line number2 index1 alt1"><code class="plain">$ ./first.out</code></div><div class="line number3 index2 alt2"><code class="plain">>> hello, world</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">Fast Start - Macbook/Ubuntu</h2><ul>
+<li><p>打開 Termainl (終端機)，下達 <code>pwd</code> 指令可以得到當前所在目錄位置</p>
+<pre><code><span class="fw-code-copy-button pure-button"><i class="fa fa-clipboard"></i></span><div id="highlighter_330903" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">morris:~ morris$ pwd</code></div><div class="line number2 index1 alt1"><code class="plain">>> /Users/morris</code></div></div></td></tr></tbody></table></div>
+</code></pre></li>
+<li><p>假設 <code>hello.c</code> 檔案放至桌面目錄下，執行 <code>cd ~/Desktop</code>，其中 <code>~</code> 表示從家目錄下。</p>
+<pre><code><span class="fw-code-copy-button pure-button"><i class="fa fa-clipboard"></i></span><div id="highlighter_506724" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">morris:~ morris$ cd ~/Desktop</code></div><div class="line number2 index1 alt1"><code class="plain">morris:Desktop morris$</code></div></div></td></tr></tbody></table></div>
+</code></pre></li>
+<li><p>可以利用 Editor 或者是 command line mode 下的 vim 編譯器創建文字欓。</p>
+<pre><code><span class="fw-code-copy-button pure-button"><i class="fa fa-clipboard"></i></span><div id="highlighter_495957" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">morris:Desktop morris$ vim hello.c</code></div></div></td></tr></tbody></table></div>
+</code></pre><p>進入 vim 不要慌，仔細看左下角的訊息，按下鍵盤上的 <code>i</code> 可以進入 <code>-- INSERT --</code> 模式，這時候可以打上你的程式碼，按下鍵盤上的 <code>ESC</code> 離開 INSERT MODE。最後按下 <code>:wq</code> (寫入並離開) 或者是 <code>:q</code> (離開) 又或者是 <code>:q!</code> (離開但不儲存) 才能關閉 vim 編譯器。</p>
+</li>
+<li><p>編譯 <code>hello.c</code> 檔案，預設會產出 <code>./a.out</code> 的執行檔。</p>
+<pre><code><span class="fw-code-copy-button pure-button"><i class="fa fa-clipboard"></i></span><div id="highlighter_736200" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">morris:Desktop morris$ gcc hello.c -std=c99</code></div></div></td></tr></tbody></table></div>
+</code></pre></li>
+<li><p>測試運行</p>
+<pre><code><span class="fw-code-copy-button pure-button"><i class="fa fa-clipboard"></i></span><div id="highlighter_983030" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">morris:Desktop morris$ ./a.out</code></div></div></td></tr></tbody></table></div>
+</code></pre></li>
+</ul>
+<h2 class="content-subhead">Fast Start - Common</h2><ul>
+<li>進入無限迴圈，強制關閉運行<ul>
+<li>若按下 <code>Ctrl + Z + ENTER</code> 相當於 stdin 串流的 EOF</li>
+<li>若按下 <code>Ctrl + C</code> 相當於中斷程式</li>
+<li>若按下 <code>Ctrl + D</code> 相當於前兩個合併一起處理</li>
+</ul>
+</li>
+<li>鍵入檔案名稱打入很慢，請善用利用 <code>Tab</code> 鍵提供自動補完</li>
+<li>指令很長，要回到行首或行尾修改參數，請善用 <code>HOME</code> 和 <code>END</code> 鍵。Macbook 使用者若在 Terminal 請使用 <code>control + a</code> 和 <code>control + e</code>，若在 Editor 上則使用 <code>command + ←</code> 和 <code>command + →</code></li>
+</ul>
+<h2 class="content-subhead">Example Code</h2><pre><code><span class="fw-code-copy-button pure-button"><i class="fa fa-clipboard"></i></span><div id="highlighter_287867" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="preprocessor">#include &lt;stdio.h></code></div><div class="line number2 index1 alt1">&nbsp;</div><div class="line number3 index2 alt2"><code class="color1 bold">int</code> <code class="plain">main() {</code></div><div class="line number4 index3 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="color1 bold">int</code> <code class="plain">a, b;</code></div><div class="line number5 index4 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword bold">while</code> <code class="plain">(</code><code class="functions bold">scanf</code><code class="plain">(</code><code class="string">"%d %d"</code><code class="plain">, &a, &b) == 2)</code></div><div class="line number6 index5 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions bold">printf</code><code class="plain">(</code><code class="string">"%d\n%d\n"</code><code class="plain">, b, a);</code></div><div class="line number7 index6 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword bold">return</code> <code class="plain">0;</code></div><div class="line number8 index7 alt1"><code class="plain">}</code></div></div></td></tr></tbody></table></div>
+</code></pre>

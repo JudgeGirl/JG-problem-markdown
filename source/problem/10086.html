@@ -1,0 +1,138 @@
+<h2 class="content-subhead">題目描述</h2><p>模擬工作流程，在一個 $N \times N$ 的網格 (左邊界可以通到右邊界，上邊界可以通到下邊界) 上有三種狀態紅 $R$, 藍 $B$, 空格 $W$，每次模擬分成兩個步驟</p>
+<ul>
+<li>第一步，只有紅 $R$ 可移動，紅 $R$ 只能往右移動一格到空白 $W$ 的位置，否則仍在原處。</li>
+<li>第二步，只有藍 $B$ 可移動，藍 $B$ 只能往下移動一格到空白 $W$ 的位置，否則仍在原處。</li>
+</ul>
+<p>請問模擬 $M$ 次後盤面為何？</p>
+<h2 class="content-subhead">輸入格式</h2><p>輸入只有一組測資，第一行有兩個整數 $N, \; M$，分別為盤面大小以及模擬次數。接下來會有 $N$ 行，每一行上會有 $N$ 個字元。</p>
+<ul>
+<li>$1 \le N, M \le 1000$</li>
+</ul>
+<h2 class="content-subhead">輸出格式</h2><p>輸出 $N \times N$ 盤面。</p>
+<h2 class="content-subhead">範例輸入</h2><pre><code><span class="fw-code-copy-button pure-button"><i class="fa fa-clipboard"></i></span><div id="highlighter_72761" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">4 1</code></div><div class="line number2 index1 alt1"><code class="plain">RRWR</code></div><div class="line number3 index2 alt2"><code class="plain">WWBW</code></div><div class="line number4 index3 alt1"><code class="plain">BWRW</code></div><div class="line number5 index4 alt2"><code class="plain">WWWW</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">範例輸出</h2><pre><code><span class="fw-code-copy-button pure-button"><i class="fa fa-clipboard"></i></span><div id="highlighter_956131" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">RWRR</code></div><div class="line number2 index1 alt1"><code class="plain">WWWW</code></div><div class="line number3 index2 alt2"><code class="plain">WWBR</code></div><div class="line number4 index3 alt1"><code class="plain">BWWW</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">備註</h2><p><canvas id="canvas" width="420px" height="200px" 
+            style="background: #fff; magrin:20px;">
+    </canvas>
+    <form name="input" action="#" id="input">
+        <textarea rows="10" cols="60" id="inputblock">1 1 0 1
+0 0 2 0
+2 0 1 0
+0 0 0 0</textarea> 
+        <button type="submit" name="submit" id="submit">Run</button>
+    </form></p>
+<script type="text/javascript" language="javascript">
+
+function Simulation(h, w, board) {
+    this.h = h;
+    this.w = w;
+    this.board = board;
+    this.gap = 40;
+    this.padding = 10;
+    this.draw = function(canvas) {
+        var context = canvas.getContext("2d");
+        for (var i = 0, dx = 0; i <= this.w; i++, dx += this.gap) {
+            context.moveTo(dx + this.padding, this.padding);
+            context.lineTo(dx + this.padding, this.padding + this.h * this.gap);
+        }
+        for (var i = 0, dy = 0; i <= this.h; i++, dy += this.gap) {
+            context.moveTo(this.padding, dy + this.padding);
+            context.lineTo(this.w * this.gap + this.padding, dy + this.padding);
+        }
+        context.strokeStyle = "black";
+        context.stroke();
+        function drawGird(color, x, y, gap, padding) {
+            var colors = ['white', 'red', 'blue'];
+            var lx, ly, line = 2;
+            lx = gap * x + padding + line;
+            ly = gap * y + padding + line;
+            context.fillStyle = colors[color];
+            context.fillRect(lx, ly, 
+                    gap - 2 * line, gap - 2 * line);
+        }
+
+        for (var i = 0; i < this.h; i++) {
+            for (var j = 0; j < this.w; j++)
+                drawGird(this.board[i][j], j, i, 
+                    this.gap, this.padding);
+        }
+    }
+    this.step = function() {
+        var next;
+        next = new Array();
+        for (var i = 0; i < this.h; i++) {
+            next[i] = new Array();
+            for (var j = 0; j < this.w; j++)
+                next[i][j] = 0;
+        }
+
+        // Red
+        for (var i = 0; i < this.h; i++) {
+            for (var j = 0; j < this.w; j++) {
+                if (this.board[i][j] == 1) {
+                    var pos = j+1;
+                    if (pos == this.w)    pos = 0;
+                    if (this.board[i][pos] == 0)
+                        next[i][pos] = 1;
+                    else
+                        next[i][j] = 1;
+                } else if (this.board[i][j] == 2) {
+                    next[i][j] = this.board[i][j];
+                }
+            }
+        }
+
+        this.board = next;
+        next = new Array();
+        for (var i = 0; i < this.h; i++) {
+            next[i] = new Array();
+            for (var j = 0; j < this.w; j++)
+                next[i][j] = 0;
+        }
+        // Blue
+        for (var i = 0; i < this.h; i++) {
+            for (var j = 0; j < this.w; j++) {
+                if (this.board[i][j] == 2) {
+                    var pos = i+1;
+                    if (pos == this.h)    pos = 0;
+                    if (this.board[pos][j] == 0)
+                        next[pos][j] = 2;
+                    else
+                        next[i][j] = 2;
+                } else if (this.board[i][j] == 1) {
+                    next[i][j] = this.board[i][j];
+                }
+            }
+        }
+        this.board = next;
+    }
+}
+
+var test, drawTimer;
+
+var inputForm = document.getElementById("input");
+inputForm.addEventListener("submit", function(event) {
+    var text = document.getElementById("inputblock").value;
+    var line = text.split('\n');
+    var H = 0, W = 0;
+    var board = new Array();
+    for (var i in line) {
+        var list = line[i].match(/\d+/g);
+        W = Math.max(W, list.length);
+        var numArr = new Array();
+        for (var j in list)
+            numArr[j] = parseInt(list[j]);
+        board[H] = numArr;
+        H++;
+    }
+    clearInterval(drawTimer);
+    test = new Simulation(H, W, board);    
+    test.draw(document.getElementById("canvas"));
+    drawTimer = setInterval(function() {
+            test.step();
+            test.draw(document.getElementById("canvas"));
+    }, 500);
+
+    event.preventDefault();
+});
+</script>

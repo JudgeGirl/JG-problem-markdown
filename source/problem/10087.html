@@ -1,0 +1,101 @@
+<h2 class="content-subhead">題目描述</h2><p>稀疏矩陣為大部份元素皆為零的矩陣，在科學與工程領域中求解線性模型時經常出現大型的稀疏矩陣。現在給予最常見的 Coordinate Format (簡稱 COO 格式)，請問兩個矩陣相乘結果為何。</p>
+<p>給予矩陣 $A_{n, m}$ 和 $B_{m, r}$，請計算稀疏矩陣相乘。</p>
+<p>$$
+A_{4,4} = \begin{bmatrix}
+0 &amp; 0 &amp; 0 &amp; 0 \\
+5 &amp; 8 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 3 &amp; 0 \\
+0 &amp; 6 &amp; 0 &amp; 0 \\
+\end{bmatrix}, \qquad
+B_{4,4} = \begin{bmatrix}
+0 &amp; 0 &amp; 1 &amp; 3 \\
+0 &amp; 5 &amp; 2 &amp; 0 \\
+3 &amp; 5 &amp; 0 &amp; 0 \\
+0 &amp; 2 &amp; 0 &amp; 0 \\
+\end{bmatrix}
+$$</p>
+<p>根據 COO 格式，分別轉換矩陣 $A$ 和 $B$ 的所有非零元素，如下表所示</p>
+<h3 class="content-subhead">COO of Matrix $A$</h3><table class="pure-table pure-table-bordered"><thead><tr>
+<th><code>row_index</code></th>
+<th><code>col_index</code></th>
+<th><code>value</code></th>
+</tr>
+</thead><tbody><tr>
+<td>1</td>
+<td>0</td>
+<td>5</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>8</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1</td>
+<td>6</td>
+</tr>
+</tbody></table><h3 class="content-subhead">COO of Matrix $B$</h3><table class="pure-table pure-table-bordered"><thead><tr>
+<th><code>row_index</code></th>
+<th><code>col_index</code></th>
+<th><code>value</code></th>
+</tr>
+</thead><tbody><tr>
+<td>0</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>5</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0</td>
+<td>3</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>5</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1</td>
+<td>2</td>
+</tr>
+</tbody></table><h2 class="content-subhead">輸入格式</h2><p>測資只有一組，第一行會有三個整數 $N, \; M, \; R$，分別表示矩陣 $A, \; B$ 的大小。下一行會有兩個整數 $N_A, \; N_B$，接下來會有 $N_A$ 行，每一行表示矩陣 $A$ 的 COO 格式，隨後會有 $N_B$ 行，每一行表示矩陣 $B$ 的 COO 格式。</p>
+<ul>
+<li>$0 \lt  N, \; M, \; R \le 10^6$</li>
+<li>$0 \lt  N_A, \; N_B \le 10^6$</li>
+</ul>
+<p>給予 COO 格式時，先按照 <code>row_index</code> 由小到大，相同情況由 <code>col_index</code> 由小到大的方式給定，保證不會有重複，每一個元素值 $v$ 介於 $1$ 到 $2^{31}-1$ 之間。</p>
+<h2 class="content-subhead">輸出格式</h2><p>輸出 $C_{n, r} = A_{n, m} \times B_{m, r}$ 的雜湊值。</p>
+<p>定義 $\mathit{hash}(C_{n, r}) = \sum\nolimits_{e_{i, j} \in C \text{ and } e_{i, j} \neq 0} \mathit{encrypt}((i+1)*(j+1), e_{i, j})$，實際運作的 <strong>流程</strong> 可參考以下作法，當然你沒辦法宣告 $N \times M$ 的空間使用：</p>
+<pre><code class="lang-cpp"><span class="fw-code-copy-button pure-button"><i class="fa fa-clipboard"></i></span><div id="highlighter_864048" class="syntaxhighlighter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div><div class="line number28 index27 alt1">28</div><div class="line number29 index28 alt2">29</div><div class="line number30 index29 alt1">30</div><div class="line number31 index30 alt2">31</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="keyword bold">static</code> <code class="keyword bold">inline</code> <code class="plain">uint32_t rotate_left(uint32_t x, uint32_t n) {</code></div><div class="line number2 index1 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword bold">return</code>&nbsp; <code class="plain">(x &lt;&lt; n) | (x >> (32-n));</code></div><div class="line number3 index2 alt2"><code class="plain">}</code></div><div class="line number4 index3 alt1"><code class="keyword bold">static</code> <code class="keyword bold">inline</code> <code class="plain">uint32_t encrypt(uint32_t m, uint32_t key) {</code></div><div class="line number5 index4 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword bold">return</code> <code class="plain">(rotate_left(m, key&31) + key)^key;</code></div><div class="line number6 index5 alt1"><code class="plain">}</code></div><div class="line number7 index6 alt2"><code class="preprocessor">#define MAXN 1024</code></div><div class="line number8 index7 alt1"><code class="plain">uint32_t A[MAXN][MAXN], B[MAXN][MAXN];</code></div><div class="line number9 index8 alt2"><code class="color1 bold">int</code> <code class="plain">main() {</code></div><div class="line number10 index9 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="color1 bold">int</code> <code class="plain">x, y, v;</code></div><div class="line number11 index10 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="color1 bold">int</code> <code class="plain">N, M, R, nA, nB;</code></div><div class="line number12 index11 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions bold">scanf</code><code class="plain">(</code><code class="string">"%d %d %d"</code><code class="plain">, &N, &M, &R);</code></div><div class="line number13 index12 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions bold">scanf</code><code class="plain">(</code><code class="string">"%d %d"</code><code class="plain">, &nA, &nB);</code></div><div class="line number14 index13 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword bold">for</code> <code class="plain">(</code><code class="color1 bold">int</code> <code class="plain">i = 0; i &lt; nA; i++)</code></div><div class="line number15 index14 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions bold">scanf</code><code class="plain">(</code><code class="string">"%d %d %d"</code><code class="plain">, &x, &y, &v), A[x][y] = v;</code></div><div class="line number16 index15 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword bold">for</code> <code class="plain">(</code><code class="color1 bold">int</code> <code class="plain">i = 0; i &lt; nB; i++)</code></div><div class="line number17 index16 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions bold">scanf</code><code class="plain">(</code><code class="string">"%d %d %d"</code><code class="plain">, &x, &y, &v), B[x][y] = v;</code></div><div class="line number18 index17 alt1">&nbsp;</div><div class="line number19 index18 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">uint32_t hash = 0;</code></div><div class="line number20 index19 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword bold">for</code> <code class="plain">(</code><code class="color1 bold">int</code> <code class="plain">i = 0; i &lt; N; i++) {</code></div><div class="line number21 index20 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword bold">for</code> <code class="plain">(</code><code class="color1 bold">int</code> <code class="plain">j = 0; j &lt; R; j++) {</code></div><div class="line number22 index21 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">uint32_t sum = 0;</code></div><div class="line number23 index22 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword bold">for</code> <code class="plain">(</code><code class="color1 bold">int</code> <code class="plain">k = 0; k &lt; M; k++)</code></div><div class="line number24 index23 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">sum += A[i][k] * B[k][j];</code></div><div class="line number25 index24 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword bold">if</code> <code class="plain">(sum)</code></div><div class="line number26 index25 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">hash += encrypt((i+1)*(j+1), sum);</code></div><div class="line number27 index26 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></div><div class="line number28 index27 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">}</code></div><div class="line number29 index28 alt2"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="functions bold">printf</code><code class="plain">(</code><code class="string">"%u\n"</code><code class="plain">, hash);</code></div><div class="line number30 index29 alt1"><code class="undefined spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="keyword bold">return</code> <code class="plain">0;</code></div><div class="line number31 index30 alt2"><code class="plain">}</code></div></div></td></tr></tbody></table></div>
+</code></pre>
+<h2 class="content-subhead">範例輸入</h2><pre><code><span class="fw-code-copy-button pure-button"><i class="fa fa-clipboard"></i></span><div id="highlighter_964584" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">4 4 4</code></div><div class="line number2 index1 alt1"><code class="plain">4 7</code></div><div class="line number3 index2 alt2">&nbsp;</div><div class="line number4 index3 alt1"><code class="plain">1 0 5</code></div><div class="line number5 index4 alt2"><code class="plain">1 1 8</code></div><div class="line number6 index5 alt1"><code class="plain">2 2 3</code></div><div class="line number7 index6 alt2"><code class="plain">3 1 6</code></div><div class="line number8 index7 alt1">&nbsp;</div><div class="line number9 index8 alt2"><code class="plain">0 2 1</code></div><div class="line number10 index9 alt1"><code class="plain">0 3 3</code></div><div class="line number11 index10 alt2"><code class="plain">1 1 5</code></div><div class="line number12 index11 alt1"><code class="plain">1 2 2</code></div><div class="line number13 index12 alt2"><code class="plain">2 0 3</code></div><div class="line number14 index13 alt1"><code class="plain">2 1 5</code></div><div class="line number15 index14 alt2"><code class="plain">3 1 2</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">範例輸出</h2><pre><code><span class="fw-code-copy-button pure-button"><i class="fa fa-clipboard"></i></span><div id="highlighter_922525" class="syntaxhighlighter nogutter  "><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain">13093438</code></div></div></td></tr></tbody></table></div>
+</code></pre><h2 class="content-subhead">範例解釋</h2><p>$$A_{n, m} \times B_{m, r} = C_{4,4}=\begin{bmatrix}
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 40 &amp; 21 &amp; 15 \\
+9 &amp; 15 &amp; 0 &amp; 0 \\
+0 &amp; 30 &amp; 12 &amp; 0 \\
+\end{bmatrix}
+$$</p>
